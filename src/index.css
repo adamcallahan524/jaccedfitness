@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -97,5 +98,24 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-fitness-primary to-fitness-accent;
+  }
+  
+  .fitness-card {
+    @apply p-6 rounded-xl border bg-white shadow-md transition-all duration-300 hover:shadow-lg;
+  }
+  
+  .fitness-button {
+    @apply px-6 py-3 rounded-full font-medium text-white transition-all duration-300 
+    bg-gradient-to-r from-fitness-primary to-fitness-accent hover:shadow-lg hover:scale-105;
+  }
+  
+  .fitness-section {
+    @apply py-20 px-4 md:px-8 lg:px-16;
   }
 }
