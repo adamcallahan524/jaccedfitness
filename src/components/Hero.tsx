@@ -22,7 +22,7 @@ const Hero = () => {
               <Link to="/dashboard" className="fitness-button text-center">
                 Get Started
               </Link>
-              <Link to="/features" className="px-6 py-3 rounded-full font-medium border border-fitness-primary text-fitness-primary hover:bg-fitness-primary/10 transition-all duration-300 text-center">
+              <Link to="/pricing" className="px-6 py-3 rounded-full font-medium border border-fitness-primary text-fitness-primary hover:bg-fitness-primary/10 transition-all duration-300 text-center">
                 For Gym Owners
               </Link>
             </div>

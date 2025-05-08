@@ -3,282 +3,254 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import { Calendar, Plus, Utensils } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const NutritionContent = () => {
-  const macroData = [
-    { name: 'Protein', value: 130, total: 150, color: '#4ade80' },
-    { name: 'Carbs', value: 210, total: 250, color: '#60a5fa' },
-    { name: 'Fat', value: 45, total: 55, color: '#f97316' },
+  // Daily nutrition data
+  const nutritionData = {
+    calories: {
+      goal: 2200,
+      consumed: 1820,
+      percentage: 83
+    },
+    protein: {
+      goal: 150,
+      consumed: 130,
+      percentage: 86
+    },
+    carbs: {
+      goal: 250,
+      consumed: 210,
+      percentage: 84
+    },
+    fat: {
+      goal: 55,
+      consumed: 45,
+      percentage: 82
+    }
+  };
+  
+  // This week's meal plan
+  const mealPlan = [
+    {
+      day: "Monday",
+      meals: [
+        { type: "Breakfast", name: "Protein Oatmeal", calories: 320, complete: true },
+        { type: "Lunch", name: "Chicken Salad", calories: 450, complete: true },
+        { type: "Dinner", name: "Salmon with Veggies", calories: 520, complete: false }
+      ]
+    },
+    {
+      day: "Tuesday",
+      meals: [
+        { type: "Breakfast", name: "Greek Yogurt & Berries", calories: 280, complete: false },
+        { type: "Lunch", name: "Turkey Wrap", calories: 420, complete: false },
+        { type: "Dinner", name: "Stir Fry Tofu", calories: 480, complete: false }
+      ]
+    }
   ];
-
-  const weeklyData = [
-    { day: 'Mon', calories: 2100, target: 2200 },
-    { day: 'Tue', calories: 1950, target: 2200 },
-    { day: 'Wed', calories: 2250, target: 2200 },
-    { day: 'Thu', calories: 2180, target: 2200 },
-    { day: 'Fri', calories: 2300, target: 2200 },
-    { day: 'Sat', calories: 2500, target: 2200 },
-    { day: 'Sun', calories: 1900, target: 2200 },
-  ];
-
+  
   return (
     <div className="p-6">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold mb-1">Nutrition Tracker</h1>
-        <p className="text-gray-600">Monitor your daily intake and macronutrients</p>
+        <h1 className="text-2xl font-bold mb-1">Nutrition Tracking</h1>
+        <p className="text-gray-600">Monitor your meals and track your macros</p>
       </div>
       
-      <Tabs defaultValue="daily" className="mb-8">
-        <TabsList>
-          <TabsTrigger value="daily">Daily Overview</TabsTrigger>
-          <TabsTrigger value="meals">Meal Planner</TabsTrigger>
-          <TabsTrigger value="trends">Trends</TabsTrigger>
+      <Tabs defaultValue="today">
+        <TabsList className="mb-4">
+          <TabsTrigger value="today">Today</TabsTrigger>
+          <TabsTrigger value="meal-plan">Meal Plan</TabsTrigger>
+          <TabsTrigger value="history">History</TabsTrigger>
         </TabsList>
         
-        <TabsContent value="daily">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-4">
-            <Card className="lg:col-span-2">
-              <CardHeader>
-                <CardTitle>Today's Nutrition</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex justify-between mb-8">
-                  <div className="text-center">
-                    <p className="text-sm text-gray-500 mb-1">Consumed</p>
-                    <p className="text-2xl font-bold">1,820</p>
-                    <p className="text-sm text-gray-500">calories</p>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-sm text-gray-500 mb-1">Remaining</p>
-                    <p className="text-2xl font-bold">380</p>
-                    <p className="text-sm text-gray-500">calories</p>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-sm text-gray-500 mb-1">Goal</p>
-                    <p className="text-2xl font-bold">2,200</p>
-                    <p className="text-sm text-gray-500">calories</p>
-                  </div>
-                </div>
-                
-                <div className="h-[200px]">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                      <Pie
-                        data={macroData}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={60}
-                        outerRadius={80}
-                        paddingAngle={2}
-                        dataKey="value"
-                      >
-                        {macroData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={entry.color} />
-                        ))}
-                      </Pie>
-                      <Tooltip />
-                    </PieChart>
-                  </ResponsiveContainer>
-                </div>
-                
-                <div className="grid grid-cols-3 gap-4 mt-4">
-                  {macroData.map((macro) => (
-                    <div key={macro.name}>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-sm font-medium">{macro.name}</span>
-                        <span className="text-sm text-gray-500">{macro.value}g / {macro.total}g</span>
-                      </div>
-                      <Progress 
-                        value={(macro.value / macro.total) * 100} 
-                        className="h-2" 
-                        indicatorClassName={`bg-[${macro.color}]`}
-                      />
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-            
+        <TabsContent value="today" className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Daily Summary Card */}
             <Card>
-              <CardHeader>
-                <CardTitle>Water Intake</CardTitle>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg font-bold flex items-center justify-between">
+                  <span>Daily Summary</span>
+                  <span className="text-sm font-normal text-gray-500">May 8, 2025</span>
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-col items-center">
-                  <div className="relative w-32 h-32 mb-4">
-                    <div className="absolute inset-0 rounded-full border-4 border-gray-100" />
-                    <div 
-                      className="absolute inset-0 rounded-full border-4 border-blue-400" 
-                      style={{ 
-                        clipPath: 'inset(50% 0 0 0)', 
-                        transform: 'rotate(-90deg)' 
-                      }} 
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center flex-col">
-                      <span className="text-2xl font-bold">5/8</span>
-                      <span className="text-xs text-gray-500">glasses</span>
+                <div className="space-y-6">
+                  <div>
+                    <div className="flex justify-between mb-1.5">
+                      <span className="text-sm font-medium">Calories</span>
+                      <span className="text-sm">{nutritionData.calories.consumed} / {nutritionData.calories.goal}</span>
+                    </div>
+                    <Progress value={nutritionData.calories.percentage} className="h-2.5" />
+                    <div className="flex justify-between mt-1 text-xs text-gray-500">
+                      <span>{nutritionData.calories.goal - nutritionData.calories.consumed} calories remaining</span>
+                      <span>{nutritionData.calories.percentage}%</span>
                     </div>
                   </div>
                   
-                  <button className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
-                    Log Water
-                  </button>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div>
+                      <div className="flex justify-between mb-1.5">
+                        <span className="text-xs font-medium">Protein</span>
+                        <span className="text-xs">{nutritionData.protein.consumed}g</span>
+                      </div>
+                      <Progress value={nutritionData.protein.percentage} className="h-2" />
+                      <div className="mt-1 text-[10px] text-gray-500">
+                        <span>Goal: {nutritionData.protein.goal}g</span>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between mb-1.5">
+                        <span className="text-xs font-medium">Carbs</span>
+                        <span className="text-xs">{nutritionData.carbs.consumed}g</span>
+                      </div>
+                      <Progress value={nutritionData.carbs.percentage} className="h-2" />
+                      <div className="mt-1 text-[10px] text-gray-500">
+                        <span>Goal: {nutritionData.carbs.goal}g</span>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between mb-1.5">
+                        <span className="text-xs font-medium">Fat</span>
+                        <span className="text-xs">{nutritionData.fat.consumed}g</span>
+                      </div>
+                      <Progress value={nutritionData.fat.percentage} className="h-2" />
+                      <div className="mt-1 text-[10px] text-gray-500">
+                        <span>Goal: {nutritionData.fat.goal}g</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <Button className="w-full">
+                    <Plus className="h-4 w-4 mr-2" /> Log Food
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+            
+            {/* Today's Meals Card */}
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg font-bold">Today's Meals</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="p-3 bg-gray-50 rounded-lg">
+                    <div className="flex justify-between items-center mb-2">
+                      <div className="flex items-center">
+                        <div className="h-8 w-8 bg-amber-100 rounded-full flex items-center justify-center mr-3">
+                          <Utensils className="h-4 w-4 text-amber-600" />
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium">Breakfast</p>
+                          <p className="text-xs text-gray-500">7:30 AM</p>
+                        </div>
+                      </div>
+                      <div className="text-sm">320 kcal</div>
+                    </div>
+                    <p className="text-sm">Protein Oatmeal with Berries</p>
+                    <div className="flex justify-between text-xs mt-2 text-gray-500">
+                      <span>Protein: 22g</span>
+                      <span>Carbs: 42g</span>
+                      <span>Fat: 8g</span>
+                    </div>
+                  </div>
+                  
+                  <div className="p-3 bg-gray-50 rounded-lg">
+                    <div className="flex justify-between items-center mb-2">
+                      <div className="flex items-center">
+                        <div className="h-8 w-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                          <Utensils className="h-4 w-4 text-green-600" />
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium">Lunch</p>
+                          <p className="text-xs text-gray-500">12:15 PM</p>
+                        </div>
+                      </div>
+                      <div className="text-sm">450 kcal</div>
+                    </div>
+                    <p className="text-sm">Grilled Chicken Salad</p>
+                    <div className="flex justify-between text-xs mt-2 text-gray-500">
+                      <span>Protein: 35g</span>
+                      <span>Carbs: 25g</span>
+                      <span>Fat: 15g</span>
+                    </div>
+                  </div>
+                  
+                  <div className="p-3 border border-dashed rounded-lg flex items-center justify-center">
+                    <Button variant="ghost" className="w-full">
+                      <Plus className="h-4 w-4 mr-2" /> Add Meal
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>
           </div>
-          
-          <div className="mt-6">
-            <h2 className="text-lg font-bold mb-4">Today's Meals</h2>
-            <div className="space-y-4">
-              {[
-                { meal: 'Breakfast', time: '7:30 AM', calories: 420, items: ['Oatmeal with berries', 'Greek yogurt', 'Coffee'] },
-                { meal: 'Lunch', time: '12:45 PM', calories: 680, items: ['Grilled chicken salad', 'Whole grain bread', 'Apple'] },
-                { meal: 'Snack', time: '3:30 PM', calories: 180, items: ['Protein bar', 'Almonds'] },
-                { meal: 'Dinner', time: '7:00 PM', calories: 540, items: ['Salmon', 'Brown rice', 'Steamed vegetables'] },
-              ].map((meal) => (
-                <Card key={meal.meal}>
-                  <CardContent className="p-4">
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <h3 className="font-bold text-lg">{meal.meal}</h3>
-                        <p className="text-sm text-gray-500">{meal.time}</p>
-                        <div className="mt-2">
-                          {meal.items.map((item) => (
-                            <div key={item} className="text-sm">{item}</div>
-                          ))}
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <span className="font-bold">{meal.calories}</span>
-                        <span className="text-sm text-gray-500"> cal</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-              
-              <button className="w-full py-3 border border-dashed border-gray-300 rounded-lg text-gray-500 hover:bg-gray-50">
-                + Add Meal
-              </button>
-            </div>
-          </div>
         </TabsContent>
         
-        <TabsContent value="meals">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-            <div>
-              <h2 className="text-lg font-bold mb-4">Suggested Meal Plans</h2>
-              <div className="space-y-4">
-                {[
-                  { name: 'High Protein Plan', calories: 2200, description: 'Perfect for muscle building and recovery' },
-                  { name: 'Low Carb Plan', calories: 1800, description: 'Ideal for cutting and fat loss phases' },
-                  { name: 'Balanced Nutrition', calories: 2000, description: 'Well-rounded plan for general fitness' },
-                  { name: 'Vegetarian Power', calories: 1900, description: 'Plant-based nutrition for active lifestyles' },
-                ].map((plan) => (
-                  <Card key={plan.name}>
-                    <CardContent className="p-4">
-                      <h3 className="font-bold">{plan.name}</h3>
-                      <p className="text-sm text-gray-500">{plan.description}</p>
-                      <div className="flex justify-between items-center mt-2">
-                        <span className="text-sm">{plan.calories} calories</span>
-                        <button className="text-xs bg-fitness-primary text-white px-3 py-1 rounded-full">
-                          View Plan
-                        </button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-            
-            <div>
-              <h2 className="text-lg font-bold mb-4">Recommended Recipes</h2>
-              <div className="space-y-4">
-                {[
-                  { name: 'Protein Packed Breakfast Bowl', time: '15 min', calories: 450, difficulty: 'Easy' },
-                  { name: 'Grilled Chicken & Quinoa Salad', time: '25 min', calories: 520, difficulty: 'Medium' },
-                  { name: 'High Protein Smoothie', time: '5 min', calories: 320, difficulty: 'Easy' },
-                  { name: 'Baked Salmon with Vegetables', time: '35 min', calories: 480, difficulty: 'Medium' },
-                ].map((recipe) => (
-                  <Card key={recipe.name}>
-                    <CardContent className="p-0">
-                      <div className="h-40 bg-gray-200">
-                        {/* Image would go here */}
-                        <div className="h-full flex items-center justify-center text-gray-400">Recipe Image</div>
-                      </div>
-                      <div className="p-4">
-                        <h3 className="font-bold">{recipe.name}</h3>
-                        <div className="flex justify-between text-sm text-gray-500 mt-1">
-                          <span>{recipe.calories} cal</span>
-                          <span>{recipe.time}</span>
-                          <span>{recipe.difficulty}</span>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
-        </TabsContent>
-        
-        <TabsContent value="trends">
-          <Card className="mt-4">
-            <CardHeader>
-              <CardTitle>Weekly Calorie Intake</CardTitle>
+        <TabsContent value="meal-plan">
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-lg font-bold flex items-center justify-between">
+                <span>Weekly Meal Plan</span>
+                <Button variant="outline" size="sm" className="flex items-center gap-2">
+                  <Calendar className="h-4 w-4" />
+                  <span>May 8-14</span>
+                </Button>
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="h-[300px]">
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={weeklyData}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="day" />
-                    <YAxis />
-                    <Tooltip />
-                    <Bar dataKey="calories" fill="#8884d8" />
-                    <Bar dataKey="target" fill="#82ca9d" />
-                  </BarChart>
-                </ResponsiveContainer>
+              <div className="space-y-6">
+                {mealPlan.map((day, index) => (
+                  <div key={index}>
+                    <h3 className="font-medium mb-3">{day.day}</h3>
+                    <div className="space-y-3">
+                      {day.meals.map((meal, mealIndex) => (
+                        <div 
+                          key={mealIndex} 
+                          className={`p-3 rounded-lg flex items-center justify-between ${
+                            meal.complete ? 'bg-gray-50' : 'border'
+                          }`}
+                        >
+                          <div className="flex items-center gap-3">
+                            <div className={`h-10 w-10 rounded-full flex items-center justify-center ${
+                              meal.type === 'Breakfast' ? 'bg-amber-100' :
+                              meal.type === 'Lunch' ? 'bg-green-100' : 'bg-blue-100'
+                            }`}>
+                              <Utensils className={`h-5 w-5 ${
+                                meal.type === 'Breakfast' ? 'text-amber-600' :
+                                meal.type === 'Lunch' ? 'text-green-600' : 'text-blue-600'
+                              }`} />
+                            </div>
+                            <div>
+                              <p className="font-medium">{meal.name}</p>
+                              <p className="text-xs text-gray-500">{meal.type} • {meal.calories} kcal</p>
+                            </div>
+                          </div>
+                          <Button variant="ghost" size="sm">
+                            {meal.complete ? 'Logged' : 'Log'}
+                          </Button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
             </CardContent>
           </Card>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-            <Card>
-              <CardContent className="p-4">
-                <h3 className="text-sm font-medium text-gray-500">Avg. Daily Calories</h3>
-                <div className="mt-2 flex items-baseline">
-                  <p className="text-2xl font-semibold">2,154</p>
-                  <p className="ml-2 text-sm text-green-600">+2.5%</p>
-                </div>
-                <p className="mt-1 text-xs text-gray-500">Compared to last week</p>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardContent className="p-4">
-                <h3 className="text-sm font-medium text-gray-500">Protein Consistency</h3>
-                <div className="mt-2 flex items-baseline">
-                  <p className="text-2xl font-semibold">92%</p>
-                  <p className="ml-2 text-sm text-green-600">+5%</p>
-                </div>
-                <p className="mt-1 text-xs text-gray-500">Days hitting protein goal</p>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardContent className="p-4">
-                <h3 className="text-sm font-medium text-gray-500">Water Intake</h3>
-                <div className="mt-2 flex items-baseline">
-                  <p className="text-2xl font-semibold">2.3L</p>
-                  <p className="ml-2 text-sm text-red-600">-0.2L</p>
-                </div>
-                <p className="mt-1 text-xs text-gray-500">Daily average</p>
-              </CardContent>
-            </Card>
-          </div>
+        </TabsContent>
+        
+        <TabsContent value="history">
+          <Card>
+            <CardContent className="pt-6">
+              <div className="text-center py-12">
+                <h3 className="text-lg font-medium mb-2">Nutrition History</h3>
+                <p className="text-gray-500 mb-4">View your past meals and nutrition data</p>
+                <Button>View History</Button>
+              </div>
+            </CardContent>
+          </Card>
         </TabsContent>
       </Tabs>
     </div>

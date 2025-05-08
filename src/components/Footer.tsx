@@ -10,9 +10,9 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="h-8 w-8 rounded-full bg-gradient-to-br from-fitness-primary to-fitness-accent flex items-center justify-center">
-                <span className="text-white font-bold text-sm">PP</span>
+                <span className="text-white font-bold text-sm">JF</span>
               </div>
-              <span className="font-bold text-lg">Physique Power</span>
+              <span className="font-bold text-lg">Jacced Fitness</span>
             </div>
             <p className="text-gray-600 mb-4">
               Your AI-powered fitness companion for personalized workouts and nutrition.
@@ -42,7 +42,6 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Product</h3>
             <ul className="space-y-2">
-              <li><Link to="/features" className="text-gray-600 hover:text-fitness-primary">Features</Link></li>
               <li><Link to="/pricing" className="text-gray-600 hover:text-fitness-primary">Pricing</Link></li>
               <li><Link to="/testimonials" className="text-gray-600 hover:text-fitness-primary">Testimonials</Link></li>
               <li><Link to="/faq" className="text-gray-600 hover:text-fitness-primary">FAQ</Link></li>
@@ -52,7 +51,6 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Company</h3>
             <ul className="space-y-2">
-              <li><Link to="/about" className="text-gray-600 hover:text-fitness-primary">About Us</Link></li>
               <li><Link to="/contact" className="text-gray-600 hover:text-fitness-primary">Contact</Link></li>
               <li><Link to="/careers" className="text-gray-600 hover:text-fitness-primary">Careers</Link></li>
               <li><Link to="/press" className="text-gray-600 hover:text-fitness-primary">Press</Link></li>
@@ -71,7 +69,7 @@ const Footer = () => {
         
         <div className="border-t mt-12 pt-8">
           <p className="text-center text-gray-500 text-sm">
-            © {new Date().getFullYear()} Physique Power Up Plan. All rights reserved.
+            © {new Date().getFullYear()} Jacced Fitness. All rights reserved.
           </p>
         </div>
       </div>

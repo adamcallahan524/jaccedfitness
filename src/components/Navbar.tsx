@@ -9,16 +9,14 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between py-4">
         <Link to="/" className="flex items-center gap-2">
           <div className="h-10 w-10 rounded-full bg-gradient-to-br from-fitness-primary to-fitness-accent flex items-center justify-center">
-            <span className="text-white font-bold text-lg">PP</span>
+            <span className="text-white font-bold text-lg">JF</span>
           </div>
-          <span className="font-bold text-xl">Physique Power</span>
+          <span className="font-bold text-xl">Jacced Fitness</span>
         </Link>
         
         <div className="hidden md:flex items-center gap-6">
           <Link to="/" className="font-medium text-gray-600 hover:text-fitness-primary transition-colors">Home</Link>
-          <Link to="/features" className="font-medium text-gray-600 hover:text-fitness-primary transition-colors">Features</Link>
           <Link to="/pricing" className="font-medium text-gray-600 hover:text-fitness-primary transition-colors">Pricing</Link>
-          <Link to="/about" className="font-medium text-gray-600 hover:text-fitness-primary transition-colors">About</Link>
         </div>
         
         <div className="flex items-center gap-3">

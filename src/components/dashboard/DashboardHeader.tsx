@@ -8,9 +8,9 @@ const DashboardHeader = () => {
     <header className="bg-white border-b px-4 py-3 flex items-center justify-between sticky top-0 z-50">
       <Link to="/dashboard" className="flex items-center gap-2">
         <div className="h-8 w-8 rounded-full bg-gradient-to-br from-fitness-primary to-fitness-accent flex items-center justify-center">
-          <span className="text-white font-bold text-xs">PP</span>
+          <span className="text-white font-bold text-xs">JF</span>
         </div>
-        <span className="font-bold text-lg hidden sm:block">Jacc Fitness</span>
+        <span className="font-bold text-lg hidden sm:block">Jacced Fitness</span>
       </Link>
       
       <div className="flex items-center gap-4">
