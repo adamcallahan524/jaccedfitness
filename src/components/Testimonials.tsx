@@ -18,7 +18,7 @@ const Testimonials = () => {
     {
       name: 'Elite Athletics',
       role: '300+ active members',
-      content: 'Jacced Fitness gives us a competitive edge. Our members love the personalized experience, and it's freed up our trainers to focus on higher-value services.',
+      content: 'Jacced Fitness gives us a competitive edge. Our members love the personalized experience, and it\'s freed up our trainers to focus on higher-value services.',
       image: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
     }
   ];

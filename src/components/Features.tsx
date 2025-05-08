@@ -7,7 +7,7 @@ const Features = () => {
     {
       icon: <Dumbbell className="h-8 w-8 text-fitness-primary" />,
       title: 'Personalized Workouts',
-      description: 'Custom workout plans based on your gym's equipment and your members' fitness levels.'
+      description: 'Custom workout plans based on your gym\'s equipment and your members\' fitness levels.'
     },
     {
       icon: <Calendar className="h-8 w-8 text-fitness-primary" />,
