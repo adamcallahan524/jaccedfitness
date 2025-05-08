@@ -10,7 +10,7 @@ const DashboardHeader = () => {
         <div className="h-8 w-8 rounded-full bg-gradient-to-br from-fitness-primary to-fitness-accent flex items-center justify-center">
           <span className="text-white font-bold text-xs">PP</span>
         </div>
-        <span className="font-bold text-lg hidden sm:block">Physique Power</span>
+        <span className="font-bold text-lg hidden sm:block">Jacc Fitness</span>
       </Link>
       
       <div className="flex items-center gap-4">
