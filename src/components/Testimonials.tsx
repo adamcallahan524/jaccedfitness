@@ -4,22 +4,22 @@ import React from 'react';
 const Testimonials = () => {
   const testimonials = [
     {
-      name: 'Sarah Johnson',
-      role: 'Lost 25 lbs in 3 months',
-      content: 'The personalized workout plans and nutrition advice have completely transformed my fitness journey. I\'ve never felt stronger or more confident!',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
+      name: 'FitLife Gym',
+      role: '150+ members using Jacced Fitness',
+      content: 'Since implementing Jacced Fitness, our member retention has increased by 35%. The personalized workout plans keep our members engaged and coming back.',
+      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
     },
     {
       name: 'Michael Chen',
-      role: 'Gained 15 lbs of muscle',
+      role: 'Individual User',
       content: 'As someone who struggled to build muscle, this AI trainer understood exactly what my body needed. The results speak for themselves!',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
     },
     {
-      name: 'Alicia Rodriguez',
-      role: 'Marathon runner',
-      content: 'The endurance training program helped me shave 15 minutes off my marathon time. I love how the app adapts to my progress week by week.',
-      image: 'https://images.unsplash.com/photo-1548142813-c348350df52b?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
+      name: 'Elite Athletics',
+      role: '300+ active members',
+      content: 'Jacced Fitness gives us a competitive edge. Our members love the personalized experience, and it's freed up our trainers to focus on higher-value services.',
+      image: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
     }
   ];
 
@@ -29,7 +29,7 @@ const Testimonials = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Success Stories</h2>
           <p className="text-gray-600 text-lg">
-            Hear from our community members who have transformed their fitness with our AI trainer
+            Hear from our gyms and members who have transformed their fitness with Jacced Fitness
           </p>
         </div>
         

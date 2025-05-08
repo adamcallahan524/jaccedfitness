@@ -7,22 +7,22 @@ const Features = () => {
     {
       icon: <Dumbbell className="h-8 w-8 text-fitness-primary" />,
       title: 'Personalized Workouts',
-      description: 'Custom workout plans based on your goals, equipment, and fitness level.'
+      description: 'Custom workout plans based on your gym's equipment and your members' fitness levels.'
     },
     {
       icon: <Calendar className="h-8 w-8 text-fitness-primary" />,
       title: 'Nutrition Coaching',
-      description: 'Get meal suggestions and nutrition advice tailored to your training schedule.'
+      description: 'Provide meal suggestions and nutrition advice tailored to each member\'s training.'
     },
     {
       icon: <Activity className="h-8 w-8 text-fitness-primary" />,
       title: 'Progress Tracking',
-      description: 'Track your progress with detailed metrics and visual representations.'
+      description: 'Help members track their progress with detailed metrics and visual representations.'
     },
     {
       icon: <Heart className="h-8 w-8 text-fitness-primary" />,
-      title: 'Community Support',
-      description: 'Connect with friends and get motivated by the community.'
+      title: 'Member Engagement',
+      description: 'Increase retention by creating a community where members stay motivated together.'
     }
   ];
 
@@ -31,10 +31,10 @@ const Features = () => {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Key Features to <span className="gradient-text">Power Up</span> Your Fitness
+            Key Features to <span className="gradient-text">Power Up</span> Your Gym
           </h2>
           <p className="text-gray-600 text-lg">
-            Our AI-driven platform adapts to your unique needs and helps you achieve your fitness goals efficiently.
+            Our AI-driven platform helps gyms provide personalized training to all members, increasing engagement and retention.
           </p>
         </div>
         

@@ -5,23 +5,23 @@ const HowItWorks = () => {
   const steps = [
     {
       number: '01',
-      title: 'Set Your Goals',
-      description: 'Tell us about your fitness goals, whether it\'s building muscle, losing weight, or improving endurance.'
+      title: 'License for Your Gym',
+      description: 'Get Jacced Fitness for your gym with custom branding and unlimited member accounts.'
     },
     {
       number: '02',
-      title: 'AI Analysis',
-      description: 'Our AI analyzes your body metrics, available equipment, and preferences to create your personalized plan.'
+      title: 'Member Onboarding',
+      description: 'Members set their fitness goals, provide body metrics, and access to available equipment.'
     },
     {
       number: '03',
-      title: 'Follow Your Plan',
-      description: 'Get daily workouts and nutrition guidance designed specifically for your unique fitness journey.'
+      title: 'AI-Powered Plans',
+      description: 'Each member gets daily workouts and nutrition guidance designed for their unique journey.'
     },
     {
       number: '04',
-      title: 'Track Progress',
-      description: 'Monitor your results, adjust your plan as needed, and celebrate your achievements.'
+      title: 'Track & Refine',
+      description: 'Monitor member engagement, satisfaction, and health outcomes across your entire gym.'
     }
   ];
 
@@ -31,7 +31,7 @@ const HowItWorks = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
           <p className="text-gray-600 text-lg">
-            Our advanced AI creates a fitness journey uniquely designed for your body and goals
+            Elevate your gym's personal training offerings with our AI-powered fitness platform
           </p>
         </div>
         
@@ -57,7 +57,7 @@ const HowItWorks = () => {
         
         <div className="mt-16 text-center">
           <a href="/dashboard" className="fitness-button inline-block">
-            Start Your Fitness Journey
+            Start Your Gym's Fitness Revolution
           </a>
         </div>
       </div>
