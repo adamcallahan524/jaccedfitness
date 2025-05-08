@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { Activity, TrendingUp, Dumbbell, Calendar } from 'lucide-react';
+import { Activity, TrendingUp, Dumbbell, Calendar, Heart } from 'lucide-react';
 
 const DashboardOverview = () => {
   return (
