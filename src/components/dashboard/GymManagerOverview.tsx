@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -13,8 +12,10 @@ import {
   ArrowDownRight
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useWaitlist } from '../../context/WaitlistContext';
 
 const GymManagerOverview = () => {
+  const { openWaitlist } = useWaitlist();
   // Example data for gym licenses and metrics
   const licenseData = {
     total: 100,
@@ -199,7 +200,7 @@ const GymManagerOverview = () => {
             </div>
             
             <div className="pt-2">
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full" onClick={openWaitlist}>
                 View Detailed Report
               </Button>
             </div>
@@ -236,7 +237,7 @@ const GymManagerOverview = () => {
             </div>
             
             <div className="mt-6">
-              <Button variant="outline" size="sm" className="w-full">
+              <Button variant="outline" size="sm" className="w-full" onClick={openWaitlist}>
                 View All Workouts
               </Button>
             </div>
@@ -251,24 +252,33 @@ const GymManagerOverview = () => {
             <div className="space-y-4">
               <div className="flex justify-between items-center">
                 <div className="text-sm font-medium">Manage Licenses</div>
-                <Button size="sm" variant="outline">Add Licenses</Button>
+                <Button size="sm" variant="outline" onClick={openWaitlist}>Add Licenses</Button>
               </div>
               
               <div className="space-y-2">
-                <div className="flex justify-between items-center p-3 border rounded-lg hover:bg-gray-50">
+                <div 
+                  className="flex justify-between items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer"
+                  onClick={openWaitlist}
+                >
                   <div className="flex items-center gap-3">
                     <div className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center">
                       <Users size={18} className="text-gray-600" />
                     </div>
                     <div>
                       <p className="font-medium">Assign Licenses</p>
-                      <p className="text-xs text-gray-500">{licenseData.total - licenseData.used} licenses available</p>
+                      <p className="text-xs text-gray-500">22 licenses available</p>
                     </div>
                   </div>
-                  <Button variant="ghost" size="sm">Assign</Button>
+                  <Button variant="ghost" size="sm" onClick={(e) => {
+                    e.stopPropagation();
+                    openWaitlist();
+                  }}>Assign</Button>
                 </div>
                 
-                <div className="flex justify-between items-center p-3 border rounded-lg hover:bg-gray-50">
+                <div 
+                  className="flex justify-between items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer"
+                  onClick={openWaitlist}
+                >
                   <div className="flex items-center gap-3">
                     <div className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center">
                       <Calendar size={18} className="text-gray-600" />
@@ -278,10 +288,16 @@ const GymManagerOverview = () => {
                       <p className="text-xs text-gray-500">Renews in 45 days</p>
                     </div>
                   </div>
-                  <Button variant="ghost" size="sm">Manage</Button>
+                  <Button variant="ghost" size="sm" onClick={(e) => {
+                    e.stopPropagation();
+                    openWaitlist();
+                  }}>Manage</Button>
                 </div>
                 
-                <div className="flex justify-between items-center p-3 border rounded-lg hover:bg-gray-50">
+                <div 
+                  className="flex justify-between items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer"
+                  onClick={openWaitlist}
+                >
                   <div className="flex items-center gap-3">
                     <div className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center">
                       <BarChart size={18} className="text-gray-600" />
@@ -291,7 +307,10 @@ const GymManagerOverview = () => {
                       <p className="text-xs text-gray-500">Download usage analytics</p>
                     </div>
                   </div>
-                  <Button variant="ghost" size="sm">Reports</Button>
+                  <Button variant="ghost" size="sm" onClick={(e) => {
+                    e.stopPropagation();
+                    openWaitlist();
+                  }}>Reports</Button>
                 </div>
               </div>
             </div>
@@ -312,16 +331,16 @@ const GymManagerOverview = () => {
                 <div className="text-xl font-bold text-amber-500">13</div>
               </div>
               <p className="text-sm text-gray-500 mb-4">Members who haven't logged in within the last 14 days</p>
-              <Button variant="outline" size="sm" className="w-full">Send Reminder</Button>
+              <Button variant="outline" size="sm" className="w-full" onClick={openWaitlist}>Send Reminder</Button>
             </div>
             
             <div className="border rounded-lg p-4 hover:bg-gray-50">
               <div className="flex justify-between items-start mb-4">
                 <h3 className="font-medium">Unassigned Licenses</h3>
-                <div className="text-xl font-bold text-green-500">{licenseData.total - licenseData.used}</div>
+                <div className="text-xl font-bold text-green-500">22</div>
               </div>
               <p className="text-sm text-gray-500 mb-4">Licenses that haven't been assigned to members yet</p>
-              <Button variant="outline" size="sm" className="w-full">Invite Members</Button>
+              <Button variant="outline" size="sm" className="w-full" onClick={openWaitlist}>Invite Members</Button>
             </div>
             
             <div className="border rounded-lg p-4 hover:bg-gray-50">
@@ -330,7 +349,7 @@ const GymManagerOverview = () => {
                 <div className="text-xl font-bold text-blue-500">45</div>
               </div>
               <p className="text-sm text-gray-500 mb-4">Days remaining before your plan renewal date</p>
-              <Button variant="outline" size="sm" className="w-full">Manage Subscription</Button>
+              <Button variant="outline" size="sm" className="w-full" onClick={openWaitlist}>Manage Subscription</Button>
             </div>
           </div>
         </CardContent>

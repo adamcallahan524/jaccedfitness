@@ -5,8 +5,11 @@ import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Plus, Utensils } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useWaitlist } from '../../context/WaitlistContext';
 
 const NutritionContent = () => {
+  const { openWaitlist } = useWaitlist();
+  
   // Daily nutrition data
   const nutritionData = {
     calories: {
@@ -122,7 +125,7 @@ const NutritionContent = () => {
                     </div>
                   </div>
                   
-                  <Button className="w-full">
+                  <Button className="w-full" onClick={openWaitlist}>
                     <Plus className="h-4 w-4 mr-2" /> Log Food
                   </Button>
                 </div>
@@ -179,7 +182,7 @@ const NutritionContent = () => {
                   </div>
                   
                   <div className="p-3 border border-dashed rounded-lg flex items-center justify-center">
-                    <Button variant="ghost" className="w-full">
+                    <Button variant="ghost" className="w-full" onClick={openWaitlist}>
                       <Plus className="h-4 w-4 mr-2" /> Add Meal
                     </Button>
                   </div>
@@ -209,9 +212,10 @@ const NutritionContent = () => {
                       {day.meals.map((meal, mealIndex) => (
                         <div 
                           key={mealIndex} 
-                          className={`p-3 rounded-lg flex items-center justify-between ${
+                          className={`p-3 rounded-lg flex items-center justify-between cursor-pointer ${
                             meal.complete ? 'bg-gray-50' : 'border'
                           }`}
+                          onClick={openWaitlist}
                         >
                           <div className="flex items-center gap-3">
                             <div className={`h-10 w-10 rounded-full flex items-center justify-center ${
@@ -228,7 +232,10 @@ const NutritionContent = () => {
                               <p className="text-xs text-gray-500">{meal.type} • {meal.calories} kcal</p>
                             </div>
                           </div>
-                          <Button variant="ghost" size="sm">
+                          <Button variant="ghost" size="sm" onClick={(e) => {
+                            e.stopPropagation();
+                            openWaitlist();
+                          }}>
                             {meal.complete ? 'Logged' : 'Log'}
                           </Button>
                         </div>
@@ -247,7 +254,7 @@ const NutritionContent = () => {
               <div className="text-center py-12">
                 <h3 className="text-lg font-medium mb-2">Nutrition History</h3>
                 <p className="text-gray-500 mb-4">View your past meals and nutrition data</p>
-                <Button>View History</Button>
+                <Button onClick={openWaitlist}>View History</Button>
               </div>
             </CardContent>
           </Card>

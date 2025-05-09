@@ -3,10 +3,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Bell, User, MessageCircle, Dumbbell } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { useWaitlist } from '../../context/WaitlistContext';
 
 const DashboardHeader = () => {
   const [notificationsOpen, setNotificationsOpen] = React.useState(false);
   const [messagesOpen, setMessagesOpen] = React.useState(false);
+  const { openWaitlist } = useWaitlist();
 
   const notifications = [
     { id: 1, title: "Workout Reminder", message: "Don't forget your upper body workout today!", time: "10 minutes ago", isNew: true },
@@ -19,6 +21,11 @@ const DashboardHeader = () => {
     { id: 2, from: "Nutrition Support", message: "Your meal plan for next week is ready", time: "2 hours ago", avatar: "N" },
     { id: 3, from: "System", message: "Welcome to Jacced Fitness! How can we help?", time: "2 days ago", avatar: "S" },
   ];
+
+  const handleMessageClick = () => {
+    setMessagesOpen(false);
+    openWaitlist();
+  };
 
   return (
     <header className="bg-white border-b px-4 py-3 flex items-center justify-between sticky top-0 z-50">
@@ -46,7 +53,14 @@ const DashboardHeader = () => {
             </DialogHeader>
             <div className="max-h-[60vh] overflow-auto">
               {notifications.map((notification) => (
-                <div key={notification.id} className={`p-3 border-b last:border-b-0 ${notification.isNew ? 'bg-blue-50' : ''}`}>
+                <div 
+                  key={notification.id} 
+                  className={`p-3 border-b last:border-b-0 ${notification.isNew ? 'bg-blue-50' : ''} hover:bg-gray-50 cursor-pointer`}
+                  onClick={() => {
+                    setNotificationsOpen(false);
+                    openWaitlist();
+                  }}
+                >
                   <div className="flex justify-between">
                     <h4 className="font-medium">{notification.title}</h4>
                     {notification.isNew && (
@@ -74,7 +88,11 @@ const DashboardHeader = () => {
             </DialogHeader>
             <div className="max-h-[60vh] overflow-auto">
               {messages.map((message) => (
-                <div key={message.id} className="p-3 border-b last:border-b-0 hover:bg-gray-50 cursor-pointer">
+                <div 
+                  key={message.id} 
+                  className="p-3 border-b last:border-b-0 hover:bg-gray-50 cursor-pointer"
+                  onClick={handleMessageClick}
+                >
                   <div className="flex gap-3">
                     <div className="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center shrink-0">
                       <span className="font-medium text-gray-600">{message.avatar}</span>
@@ -93,7 +111,10 @@ const DashboardHeader = () => {
           </DialogContent>
         </Dialog>
         
-        <div className="h-9 w-9 rounded-full bg-gray-200 flex items-center justify-center">
+        <div 
+          className="h-9 w-9 rounded-full bg-gray-200 flex items-center justify-center cursor-pointer"
+          onClick={openWaitlist}
+        >
           <User size={18} className="text-gray-600" />
         </div>
       </div>

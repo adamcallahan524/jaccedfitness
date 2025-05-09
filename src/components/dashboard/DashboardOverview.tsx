@@ -2,8 +2,11 @@ import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Activity, TrendingUp, Dumbbell, Calendar, Heart } from 'lucide-react';
+import { useWaitlist } from '../../context/WaitlistContext';
 
 const DashboardOverview = () => {
+  const { openWaitlist } = useWaitlist();
+
   return (
     <div className="p-6">
       <div className="mb-8">
@@ -86,7 +89,10 @@ const DashboardOverview = () => {
                   <h4 className="font-semibold">Barbell Squats</h4>
                   <p className="text-sm text-gray-500">4 sets × 12 reps</p>
                 </div>
-                <button className="px-4 py-2 rounded-lg bg-fitness-primary text-white text-sm">
+                <button 
+                  className="px-4 py-2 rounded-lg bg-fitness-primary text-white text-sm"
+                  onClick={openWaitlist}
+                >
                   Start
                 </button>
               </div>
@@ -98,7 +104,10 @@ const DashboardOverview = () => {
                   <h4 className="font-semibold">Bench Press</h4>
                   <p className="text-sm text-gray-500">3 sets × 10 reps</p>
                 </div>
-                <button className="px-4 py-2 rounded-lg bg-fitness-primary text-white text-sm">
+                <button 
+                  className="px-4 py-2 rounded-lg bg-fitness-primary text-white text-sm"
+                  onClick={openWaitlist}
+                >
                   Start
                 </button>
               </div>
@@ -110,7 +119,10 @@ const DashboardOverview = () => {
                   <h4 className="font-semibold">Deadlifts</h4>
                   <p className="text-sm text-gray-500">4 sets × 8 reps</p>
                 </div>
-                <button className="px-4 py-2 rounded-lg bg-fitness-primary text-white text-sm">
+                <button 
+                  className="px-4 py-2 rounded-lg bg-fitness-primary text-white text-sm"
+                  onClick={openWaitlist}
+                >
                   Start
                 </button>
               </div>
@@ -122,14 +134,20 @@ const DashboardOverview = () => {
                   <h4 className="font-semibold">Pull-ups</h4>
                   <p className="text-sm text-gray-500">3 sets × to failure</p>
                 </div>
-                <button className="px-4 py-2 rounded-lg bg-fitness-primary text-white text-sm">
+                <button 
+                  className="px-4 py-2 rounded-lg bg-fitness-primary text-white text-sm"
+                  onClick={openWaitlist}
+                >
                   Start
                 </button>
               </div>
             </div>
             
             <div className="mt-6 flex justify-end">
-              <button className="text-fitness-primary hover:text-fitness-secondary underline text-sm">
+              <button 
+                className="text-fitness-primary hover:text-fitness-secondary underline text-sm"
+                onClick={openWaitlist}
+              >
                 View full workout plan →
               </button>
             </div>
@@ -174,7 +192,10 @@ const DashboardOverview = () => {
             </div>
             
             <div className="mt-6">
-              <button className="w-full py-2 rounded-lg border border-fitness-primary text-fitness-primary hover:bg-fitness-primary/5 text-sm">
+              <button 
+                className="w-full py-2 rounded-lg border border-fitness-primary text-fitness-primary hover:bg-fitness-primary/5 text-sm"
+                onClick={openWaitlist}
+              >
                 Log meal
               </button>
             </div>
@@ -197,7 +218,10 @@ const DashboardOverview = () => {
               <div className="p-4">
                 <h3 className="font-semibold mb-1">PowerFit Gym</h3>
                 <p className="text-sm text-gray-500 mb-2">0.8 miles away</p>
-                <button className="w-full py-2 rounded-lg bg-fitness-primary text-white text-sm">
+                <button 
+                  className="w-full py-2 rounded-lg bg-fitness-primary text-white text-sm"
+                  onClick={openWaitlist}
+                >
                   View Details
                 </button>
               </div>
@@ -215,7 +239,10 @@ const DashboardOverview = () => {
               <div className="p-4">
                 <h3 className="font-semibold mb-1">Iron Strength</h3>
                 <p className="text-sm text-gray-500 mb-2">1.2 miles away</p>
-                <button className="w-full py-2 rounded-lg bg-fitness-primary text-white text-sm">
+                <button 
+                  className="w-full py-2 rounded-lg bg-fitness-primary text-white text-sm"
+                  onClick={openWaitlist}
+                >
                   View Details
                 </button>
               </div>
@@ -233,7 +260,10 @@ const DashboardOverview = () => {
               <div className="p-4">
                 <h3 className="font-semibold mb-1">FitZone Studio</h3>
                 <p className="text-sm text-gray-500 mb-2">1.5 miles away</p>
-                <button className="w-full py-2 rounded-lg bg-fitness-primary text-white text-sm">
+                <button 
+                  className="w-full py-2 rounded-lg bg-fitness-primary text-white text-sm"
+                  onClick={openWaitlist}
+                >
                   View Details
                 </button>
               </div>

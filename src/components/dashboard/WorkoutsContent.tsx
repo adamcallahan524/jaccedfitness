@@ -3,8 +3,11 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Clock, Dumbbell } from 'lucide-react';
+import { useWaitlist } from '../../context/WaitlistContext';
 
 const WorkoutsContent = () => {
+  const { openWaitlist } = useWaitlist();
+
   return (
     <div className="p-6">
       <div className="mb-8">
@@ -81,7 +84,10 @@ const WorkoutsContent = () => {
                       </div>
                     </div>
                   </div>
-                  <button className="bg-fitness-primary text-white px-4 py-2 rounded-lg">
+                  <button 
+                    className="bg-fitness-primary text-white px-4 py-2 rounded-lg"
+                    onClick={openWaitlist}
+                  >
                     Start Workout
                   </button>
                 </div>
@@ -126,7 +132,11 @@ const WorkoutsContent = () => {
               { name: 'Plank', muscle: 'Core', difficulty: 'Beginner' },
               { name: 'Tricep Pushdowns', muscle: 'Arms', difficulty: 'Beginner' },
             ].map((exercise) => (
-              <Card key={exercise.name}>
+              <Card 
+                key={exercise.name}
+                className="cursor-pointer hover:bg-gray-50 transition-colors"
+                onClick={openWaitlist}
+              >
                 <CardContent className="p-4">
                   <h3 className="font-bold mb-1">{exercise.name}</h3>
                   <div className="flex justify-between">

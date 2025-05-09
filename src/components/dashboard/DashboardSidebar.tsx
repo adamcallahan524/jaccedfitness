@@ -2,10 +2,23 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Home, Dumbbell, Calendar, Activity, Heart, Users, Flag, Building2, MessageSquare, Barcode } from 'lucide-react';
+import { useWaitlist } from '../../context/WaitlistContext';
 
 const DashboardSidebar = () => {
   const location = useLocation();
   const pathname = location.pathname;
+  const { openWaitlist } = useWaitlist();
+  
+  // Real routes that exist in the application
+  const realRoutes = [
+    '/dashboard',
+    '/dashboard/workouts',
+    '/dashboard/nutrition',
+    '/dashboard/progress',
+    '/dashboard/ai-trainer',
+    '/dashboard/gym-check-in',
+    '/gym-manager'
+  ];
   
   const menuItems = [
     { icon: <Home size={20} />, label: 'Dashboard', path: '/dashboard' },
@@ -19,6 +32,14 @@ const DashboardSidebar = () => {
     { icon: <Users size={20} />, label: 'Community', path: '/dashboard/community' },
     { icon: <Building2 size={20} />, label: 'Gym Manager', path: '/gym-manager' },
   ];
+
+  // Handle sidebar item click - show waitlist for routes that don't exist
+  const handleItemClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (!realRoutes.includes(path)) {
+      e.preventDefault();
+      openWaitlist();
+    }
+  };
 
   return (
     <aside className="min-h-screen w-64 border-r bg-white hidden md:block">
@@ -39,6 +60,7 @@ const DashboardSidebar = () => {
                     ? 'bg-fitness-primary text-white font-medium' 
                     : 'text-gray-600 hover:bg-gray-100'
                 }`}
+                onClick={(e) => handleItemClick(e, item.path)}
               >
                 {item.icon}
                 <span>{item.label}</span>
