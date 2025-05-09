@@ -17,13 +17,13 @@ const CallToAction = () => {
                 to="/dashboard" 
                 className="px-8 py-4 rounded-full font-medium bg-white text-fitness-primary hover:bg-opacity-90 transition-all duration-300 text-center"
               >
-                Get Started Free
+                See It Live In Action
               </Link>
               <Link 
-                to="/features" 
+                to="/gym-manager" 
                 className="px-8 py-4 rounded-full font-medium border border-white text-white hover:bg-white/10 transition-all duration-300 text-center"
               >
-                Enterprise Solutions
+                For Gym Owners
               </Link>
             </div>
           </div>

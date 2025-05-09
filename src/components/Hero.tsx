@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Dumbbell } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -20,28 +21,11 @@ const Hero = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/dashboard" className="fitness-button text-center">
-                Get Started
+                See It Live In Action
               </Link>
-              <Link to="/pricing" className="px-6 py-3 rounded-full font-medium border border-fitness-primary text-fitness-primary hover:bg-fitness-primary/10 transition-all duration-300 text-center">
+              <Link to="/gym-manager" className="px-6 py-3 rounded-full font-medium border border-fitness-primary text-fitness-primary hover:bg-fitness-primary/10 transition-all duration-300 text-center">
                 For Gym Owners
               </Link>
-            </div>
-            
-            <div className="mt-10 flex items-center gap-4">
-              <div className="flex -space-x-4">
-                <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center border-2 border-white">
-                  <span className="text-xs">🏋️</span>
-                </div>
-                <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center border-2 border-white">
-                  <span className="text-xs">🏃</span>
-                </div>
-                <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center border-2 border-white">
-                  <span className="text-xs">💪</span>
-                </div>
-              </div>
-              <p className="text-sm text-gray-600">
-                Used by <span className="font-bold">250+ gyms</span> and <span className="font-bold">10,000+</span> fitness enthusiasts
-              </p>
             </div>
           </div>
           
@@ -121,7 +105,7 @@ const Hero = () => {
               </div>
               <div className="p-4 flex justify-between items-center bg-gray-50">
                 <p className="text-xs text-gray-500">Last updated: Today, 10:45 AM</p>
-                <button className="text-xs bg-fitness-primary text-white px-3 py-1 rounded-full">View Full Dashboard</button>
+                <Link to="/dashboard" className="text-xs bg-fitness-primary text-white px-3 py-1 rounded-full">View Full Dashboard</Link>
               </div>
             </div>
             

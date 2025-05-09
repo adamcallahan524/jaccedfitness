@@ -12,6 +12,7 @@ import ProgressPage from "./pages/ProgressPage";
 import NotFound from "./pages/NotFound";
 import Pricing from "./pages/Pricing";
 import GymManagerDashboard from "./pages/GymManagerDashboard";
+import AITrainerPage from "./pages/AITrainerPage";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/dashboard/workouts" element={<WorkoutsPage />} />
           <Route path="/dashboard/nutrition" element={<NutritionPage />} />
           <Route path="/dashboard/progress" element={<ProgressPage />} />
+          <Route path="/dashboard/ai-trainer" element={<AITrainerPage />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/gym-manager" element={<GymManagerDashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

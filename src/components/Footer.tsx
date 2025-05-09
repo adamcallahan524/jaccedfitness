@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Dumbbell } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -8,12 +9,14 @@ const Footer = () => {
       <div className="container mx-auto py-12 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="h-8 w-8 rounded-full bg-gradient-to-br from-fitness-primary to-fitness-accent flex items-center justify-center">
-                <span className="text-white font-bold text-sm">JF</span>
+                <div className="flex items-center justify-center">
+                  <Dumbbell size={14} className="text-white" />
+                </div>
               </div>
               <span className="font-bold text-lg">Jacced Fitness</span>
-            </div>
+            </Link>
             <p className="text-gray-600 mb-4">
               Your AI-powered fitness companion for personalized workouts and nutrition.
             </p>
@@ -42,9 +45,9 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Product</h3>
             <ul className="space-y-2">
-              <li><Link to="/pricing" className="text-gray-600 hover:text-fitness-primary">Pricing</Link></li>
-              <li><Link to="/testimonials" className="text-gray-600 hover:text-fitness-primary">Testimonials</Link></li>
-              <li><Link to="/faq" className="text-gray-600 hover:text-fitness-primary">FAQ</Link></li>
+              <li><Button variant="link" className="p-0 h-auto text-gray-600 hover:text-fitness-primary" onClick={() => window.open('/dashboard', '_blank')}>Demo</Button></li>
+              <li><Button variant="link" className="p-0 h-auto text-gray-600 hover:text-fitness-primary" onClick={() => window.open('/gym-manager', '_blank')}>Gym Manager Demo</Button></li>
+              <li><Button variant="link" className="p-0 h-auto text-gray-600 hover:text-fitness-primary" onClick={() => document.getElementById('waitlist-button')?.click()}>Join Waitlist</Button></li>
             </ul>
           </div>
           
