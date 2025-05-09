@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Dumbbell, Calendar, Activity, Heart, Users, Flag, Building2, MessageSquare } from 'lucide-react';
+import { Home, Dumbbell, Calendar, Activity, Heart, Users, Flag, Building2, MessageSquare, Barcode } from 'lucide-react';
 
 const DashboardSidebar = () => {
   const location = useLocation();
@@ -13,6 +13,7 @@ const DashboardSidebar = () => {
     { icon: <Calendar size={20} />, label: 'Nutrition', path: '/dashboard/nutrition' },
     { icon: <Activity size={20} />, label: 'Progress', path: '/dashboard/progress' },
     { icon: <MessageSquare size={20} />, label: 'AI Trainer', path: '/dashboard/ai-trainer' },
+    { icon: <Barcode size={20} />, label: 'Gym Check-In', path: '/dashboard/gym-check-in' },
     { icon: <Flag size={20} />, label: 'Goals', path: '/dashboard/goals' },
     { icon: <Heart size={20} />, label: 'Health', path: '/dashboard/health' },
     { icon: <Users size={20} />, label: 'Community', path: '/dashboard/community' },

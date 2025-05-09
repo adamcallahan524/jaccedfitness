@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Dumbbell, Calendar, Activity, Heart, Users, Menu, Building2, MessageSquare, Flag } from 'lucide-react';
+import { Home, Dumbbell, Calendar, Activity, Heart, Users, Menu, Building2, MessageSquare, Flag, Barcode } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const DashboardMobileNav = () => {
@@ -14,6 +14,7 @@ const DashboardMobileNav = () => {
     { icon: <Calendar size={20} />, label: 'Nutrition', path: '/dashboard/nutrition' },
     { icon: <Activity size={20} />, label: 'Progress', path: '/dashboard/progress' },
     { icon: <MessageSquare size={20} />, label: 'AI Trainer', path: '/dashboard/ai-trainer' },
+    { icon: <Barcode size={20} />, label: 'Gym Check-In', path: '/dashboard/gym-check-in' },
     { icon: <Flag size={20} />, label: 'Goals', path: '/dashboard/goals' },
     { icon: <Heart size={20} />, label: 'Health', path: '/dashboard/health' },
     { icon: <Users size={20} />, label: 'Community', path: '/dashboard/community' },
@@ -43,13 +44,13 @@ const DashboardMobileNav = () => {
       </Link>
       
       <Link
-        to="/dashboard/nutrition"
+        to="/dashboard/gym-check-in"
         className={`p-2 rounded-lg flex flex-col items-center ${
-          pathname === '/dashboard/nutrition' ? 'text-fitness-primary' : 'text-gray-500'
+          pathname === '/dashboard/gym-check-in' ? 'text-fitness-primary' : 'text-gray-500'
         }`}
       >
-        <Calendar size={20} />
-        <span className="text-xs mt-1">Nutrition</span>
+        <Barcode size={20} />
+        <span className="text-xs mt-1">Check In</span>
       </Link>
       
       <Link
