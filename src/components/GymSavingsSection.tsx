@@ -67,8 +67,9 @@ const GymSavingsSection = () => {
                 <Button onClick={openWaitlist} className="w-full">Calculate Your Gym's Savings</Button>
               </div>
               
-              <div className="hidden md:block absolute -right-6 top-1/2 -translate-y-1/2 h-12 w-12 bg-fitness-accent rounded-full flex items-center justify-center text-white">
-                <ArrowRight />
+              {/* Fixed arrow position to be properly centered in the circle */}
+              <div className="hidden md:flex absolute -right-6 top-1/2 transform -translate-y-1/2 h-12 w-12 bg-fitness-accent rounded-full items-center justify-center text-white">
+                <ArrowRight size={20} />
               </div>
             </div>
           </div>

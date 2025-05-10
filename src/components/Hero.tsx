@@ -55,19 +55,62 @@ const Hero = () => {
           </div>
           
           <div className="md:w-1/2 relative">
-            {/* Modern Hero Image */}
-            <div className="relative z-10 overflow-hidden rounded-2xl border shadow-xl">
+            {/* Dashboard Preview Image */}
+            <div className="relative z-10 overflow-hidden rounded-2xl border shadow-xl bg-white">
               <div className="aspect-[5/3] relative overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                  alt="Person with trainer using digital fitness app" 
-                  className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                {/* Mock Dashboard Interface */}
+                <div className="w-full h-full bg-gray-50 p-4">
+                  <div className="h-8 bg-white rounded-md shadow-sm mb-3 flex items-center px-3">
+                    <div className="h-3 w-3 rounded-full bg-fitness-primary mr-2"></div>
+                    <div className="h-2 w-24 bg-gray-200 rounded-md"></div>
+                    <div className="ml-auto flex gap-2">
+                      <div className="h-4 w-4 rounded-full bg-gray-200"></div>
+                      <div className="h-4 w-4 rounded-full bg-gray-200"></div>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-3 mb-3">
+                    <div className="bg-white p-3 rounded-md shadow-sm">
+                      <div className="h-2 w-16 bg-gray-200 mb-2 rounded-md"></div>
+                      <div className="flex items-end gap-1">
+                        <div className="h-5 w-8 bg-fitness-primary/20 rounded-md"></div>
+                        <div className="h-3 w-4 bg-gray-200 rounded-md"></div>
+                      </div>
+                      <div className="mt-2 h-12 bg-gray-100 rounded-md"></div>
+                    </div>
+                    <div className="bg-white p-3 rounded-md shadow-sm">
+                      <div className="h-2 w-20 bg-gray-200 mb-2 rounded-md"></div>
+                      <div className="flex items-center gap-1">
+                        <div className="h-4 w-4 rounded-full bg-fitness-accent/40"></div>
+                        <div className="h-3 w-12 bg-gray-200 rounded-md"></div>
+                      </div>
+                      <div className="mt-2 h-12 bg-gray-100 rounded-md"></div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white p-3 rounded-md shadow-sm">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="h-3 w-24 bg-gray-200 rounded-md"></div>
+                      <div className="h-6 w-16 rounded-md bg-fitness-primary"></div>
+                    </div>
+                    <div className="grid grid-cols-3 gap-2">
+                      <div className="h-16 bg-gray-100 rounded-md flex items-center justify-center">
+                        <div className="h-6 w-6 rounded-full bg-fitness-primary/20"></div>
+                      </div>
+                      <div className="h-16 bg-gray-100 rounded-md flex items-center justify-center">
+                        <div className="h-6 w-6 rounded-full bg-fitness-accent/20"></div>
+                      </div>
+                      <div className="h-16 bg-gray-100 rounded-md flex items-center justify-center">
+                        <div className="h-6 w-6 rounded-full bg-green-100"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="font-bold text-xl mb-2">AI-Powered Training</h3>
-                  <p className="text-sm text-white/80">Get personalized workouts, nutrition plans, and real-time feedback</p>
+                  <h3 className="font-bold text-xl mb-2">AI-Powered Dashboard</h3>
+                  <p className="text-sm text-white/90">Track workouts, nutrition and progress in one place</p>
                 </div>
               </div>
             </div>

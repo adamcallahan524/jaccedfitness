@@ -12,6 +12,7 @@ import {
   Users,
   Target,
   MessageCircle,
+  Building,
 } from 'lucide-react';
 
 const DashboardSidebar = () => {
@@ -101,6 +102,19 @@ const DashboardSidebar = () => {
           >
             <MessageCircle className="h-5 w-5" />
             <span>AI Trainer</span>
+          </NavLink>
+          <NavLink
+            to="/gym-manager"
+            className={({ isActive }) =>
+              `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
+                isActive
+                  ? "bg-fitness-primary text-white"
+                  : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
+              }`
+            }
+          >
+            <Building className="h-5 w-5" />
+            <span>Gym Manager</span>
           </NavLink>
         </div>
         

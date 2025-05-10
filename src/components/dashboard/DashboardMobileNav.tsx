@@ -8,11 +8,9 @@ import {
   Home,
   Dumbbell,
   TrendingUp,
-  Heart,
-  Users,
-  Target,
   MessageCircle,
-  Menu
+  Menu,
+  Building
 } from 'lucide-react';
 
 const DashboardMobileNav = () => {
@@ -20,7 +18,7 @@ const DashboardMobileNav = () => {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 border-t bg-white md:hidden">
-      <div className="grid grid-cols-5 gap-1">
+      <div className="grid grid-cols-6 gap-1">
         <NavLink
           to="/dashboard"
           className={({ isActive }) =>
@@ -65,13 +63,28 @@ const DashboardMobileNav = () => {
           <TrendingUp className="h-5 w-5" />
           <span className="text-xs mt-1">Progress</span>
         </NavLink>
-        <button
-          onClick={openWaitlist}
-          className="flex flex-col items-center justify-center py-2 text-gray-600"
+        <NavLink
+          to="/gym-manager"
+          className={({ isActive }) =>
+            `flex flex-col items-center justify-center py-2 ${
+              isActive ? "text-fitness-primary" : "text-gray-600"
+            }`
+          }
         >
-          <Menu className="h-5 w-5" />
-          <span className="text-xs mt-1">More</span>
-        </button>
+          <Building className="h-5 w-5" />
+          <span className="text-xs mt-1">Gym</span>
+        </NavLink>
+        <NavLink
+          to="/dashboard/ai-trainer"
+          className={({ isActive }) =>
+            `flex flex-col items-center justify-center py-2 ${
+              isActive ? "text-fitness-primary" : "text-gray-600"
+            }`
+          }
+        >
+          <MessageCircle className="h-5 w-5" />
+          <span className="text-xs mt-1">AI</span>
+        </NavLink>
       </div>
     </div>
   );

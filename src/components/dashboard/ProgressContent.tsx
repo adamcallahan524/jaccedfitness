@@ -10,7 +10,7 @@ import {
 } from 'recharts';
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
-import { Camera, TrendingUp, Award, Flag, Calendar as CalendarIcon } from 'lucide-react';
+import { Camera, TrendingUp, Award, Flag, Calendar as CalendarIcon, Dumbbell } from 'lucide-react';
 import { useWaitlist } from '../../context/WaitlistContext';
 
 const ProgressContent = () => {
