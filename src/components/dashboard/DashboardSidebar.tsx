@@ -1,73 +1,147 @@
 
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Home, Dumbbell, Calendar, Activity, Heart, Users, Flag, Building2, MessageSquare, Barcode } from 'lucide-react';
+import { NavLink } from "react-router-dom";
 import { useWaitlist } from '../../context/WaitlistContext';
+import {
+  Activity,
+  BarChart,
+  Home,
+  Dumbbell,
+  TrendingUp,
+  Heart,
+  Users,
+  Target,
+  MessageCircle,
+} from 'lucide-react';
 
 const DashboardSidebar = () => {
-  const location = useLocation();
-  const pathname = location.pathname;
   const { openWaitlist } = useWaitlist();
-  
-  // Real routes that exist in the application
-  const realRoutes = [
-    '/dashboard',
-    '/dashboard/workouts',
-    '/dashboard/nutrition',
-    '/dashboard/progress',
-    '/dashboard/ai-trainer',
-    '/dashboard/gym-check-in',
-    '/gym-manager'
-  ];
-  
-  const menuItems = [
-    { icon: <Home size={20} />, label: 'Dashboard', path: '/dashboard' },
-    { icon: <Dumbbell size={20} />, label: 'Workouts', path: '/dashboard/workouts' },
-    { icon: <Calendar size={20} />, label: 'Nutrition', path: '/dashboard/nutrition' },
-    { icon: <Activity size={20} />, label: 'Progress', path: '/dashboard/progress' },
-    { icon: <MessageSquare size={20} />, label: 'AI Trainer', path: '/dashboard/ai-trainer' },
-    { icon: <Barcode size={20} />, label: 'Gym Check-In', path: '/dashboard/gym-check-in' },
-    { icon: <Flag size={20} />, label: 'Goals', path: '/dashboard/goals' },
-    { icon: <Heart size={20} />, label: 'Health', path: '/dashboard/health' },
-    { icon: <Users size={20} />, label: 'Community', path: '/dashboard/community' },
-    { icon: <Building2 size={20} />, label: 'Gym Manager', path: '/gym-manager' },
-  ];
-
-  // Handle sidebar item click - show waitlist for routes that don't exist
-  const handleItemClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-    if (!realRoutes.includes(path)) {
-      e.preventDefault();
-      openWaitlist();
-    }
-  };
 
   return (
-    <aside className="min-h-screen w-64 border-r bg-white hidden md:block">
-      <div className="p-4">
-        <div className="mb-6">
-          <h2 className="text-sm font-medium text-gray-500 uppercase">Menu</h2>
+    <aside className="hidden md:block w-64 bg-sidebar-background border-r">
+      <div className="h-full py-6 px-3 flex flex-col">
+        <div className="space-y-1">
+          <h2 className="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+            Dashboard
+          </h2>
+          <NavLink
+            to="/dashboard"
+            className={({ isActive }) =>
+              `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
+                isActive
+                  ? "bg-fitness-primary text-white"
+                  : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
+              }`
+            }
+          >
+            <Home className="h-5 w-5" />
+            <span>Overview</span>
+          </NavLink>
+          <NavLink
+            to="/dashboard/workouts"
+            className={({ isActive }) =>
+              `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
+                isActive
+                  ? "bg-fitness-primary text-white"
+                  : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
+              }`
+            }
+          >
+            <Dumbbell className="h-5 w-5" />
+            <span>Workouts</span>
+          </NavLink>
+          <NavLink
+            to="/dashboard/nutrition"
+            className={({ isActive }) =>
+              `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
+                isActive
+                  ? "bg-fitness-primary text-white"
+                  : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
+              }`
+            }
+          >
+            <BarChart className="h-5 w-5" />
+            <span>Nutrition</span>
+          </NavLink>
+          <NavLink
+            to="/dashboard/progress"
+            className={({ isActive }) =>
+              `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
+                isActive
+                  ? "bg-fitness-primary text-white"
+                  : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
+              }`
+            }
+          >
+            <TrendingUp className="h-5 w-5" />
+            <span>Progress</span>
+          </NavLink>
+          <NavLink
+            to="/dashboard/gym-check-in"
+            className={({ isActive }) =>
+              `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
+                isActive
+                  ? "bg-fitness-primary text-white"
+                  : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
+              }`
+            }
+          >
+            <Activity className="h-5 w-5" />
+            <span>Gym Check-in</span>
+          </NavLink>
+          <NavLink
+            to="/dashboard/ai-trainer"
+            className={({ isActive }) =>
+              `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
+                isActive
+                  ? "bg-fitness-primary text-white"
+                  : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
+              }`
+            }
+          >
+            <MessageCircle className="h-5 w-5" />
+            <span>AI Trainer</span>
+          </NavLink>
         </div>
         
-        <nav className="space-y-1">
-          {menuItems.map((item) => {
-            const isActive = pathname === item.path;
-            return (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`flex items-center gap-3 px-3 py-2 rounded-lg ${
-                  isActive 
-                    ? 'bg-fitness-primary text-white font-medium' 
-                    : 'text-gray-600 hover:bg-gray-100'
-                }`}
-                onClick={(e) => handleItemClick(e, item.path)}
-              >
-                {item.icon}
-                <span>{item.label}</span>
-              </Link>
-            );
-          })}
-        </nav>
+        <div className="mt-6 space-y-1">
+          <h2 className="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+            Coming Soon
+          </h2>
+          <button
+            onClick={openWaitlist}
+            className="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 hover:text-fitness-primary hover:bg-gray-100 transition-all"
+          >
+            <Target className="h-5 w-5" />
+            <span>Goals</span>
+          </button>
+          <button
+            onClick={openWaitlist}
+            className="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 hover:text-fitness-primary hover:bg-gray-100 transition-all"
+          >
+            <Heart className="h-5 w-5" />
+            <span>Health</span>
+          </button>
+          <button
+            onClick={openWaitlist}
+            className="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 hover:text-fitness-primary hover:bg-gray-100 transition-all"
+          >
+            <Users className="h-5 w-5" />
+            <span>Community</span>
+          </button>
+        </div>
+        
+        <div className="mt-auto px-3">
+          <div className="rounded-lg bg-gray-100 p-4 border border-gray-200">
+            <p className="text-sm font-medium mb-3">Need personalized help?</p>
+            <button 
+              onClick={openWaitlist}
+              className="w-full px-3 py-2 text-xs rounded-lg bg-fitness-primary text-white hover:bg-fitness-primary/90 transition-colors"
+            >
+              Talk to AI Coach
+            </button>
+          </div>
+        </div>
       </div>
     </aside>
   );

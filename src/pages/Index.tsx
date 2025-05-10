@@ -6,6 +6,7 @@ import Features from '@/components/Features';
 import HowItWorks from '@/components/HowItWorks';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
+import GymSavingsSection from '@/components/GymSavingsSection';
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <main>
         <Hero />
         <Features />
+        <GymSavingsSection />
         <HowItWorks />
         <CallToAction />
       </main>

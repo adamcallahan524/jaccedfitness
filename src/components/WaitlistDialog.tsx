@@ -28,7 +28,7 @@ const WaitlistDialog: React.FC<WaitlistDialogProps> = ({ open, onOpenChange }) =
           </p>
           
           <Button 
-            className="w-full" 
+            className="w-full bg-gradient-to-r from-fitness-primary to-fitness-accent hover:opacity-90"
             onClick={handleJoinWaitlist}
           >
             Join Waitlist
