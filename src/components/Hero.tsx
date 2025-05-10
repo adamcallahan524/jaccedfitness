@@ -58,65 +58,86 @@ const Hero = () => {
             {/* Dashboard Preview Image */}
             <div className="relative z-10 overflow-hidden rounded-2xl border shadow-xl bg-white">
               <div className="aspect-[5/3] relative overflow-hidden">
-                {/* Mock Dashboard Interface */}
+                {/* Realistic Dashboard Interface */}
                 <div className="w-full h-full bg-gray-50 p-4">
-                  <div className="h-8 bg-white rounded-md shadow-sm mb-3 flex items-center px-3">
-                    <div className="h-3 w-3 rounded-full bg-fitness-primary mr-2"></div>
-                    <div className="h-2 w-24 bg-gray-200 rounded-md"></div>
+                  <div className="h-10 bg-white rounded-lg shadow-sm mb-3 flex items-center px-3">
+                    <div className="h-4 w-4 rounded-full bg-fitness-primary mr-2"></div>
+                    <div className="h-3 w-32 bg-gray-200 rounded-md"></div>
                     <div className="ml-auto flex gap-2">
-                      <div className="h-4 w-4 rounded-full bg-gray-200"></div>
-                      <div className="h-4 w-4 rounded-full bg-gray-200"></div>
+                      <div className="h-6 w-6 rounded-full bg-gray-200"></div>
+                      <div className="h-6 w-6 rounded-full bg-gray-200"></div>
                     </div>
                   </div>
                   
                   <div className="grid grid-cols-2 gap-3 mb-3">
-                    <div className="bg-white p-3 rounded-md shadow-sm">
-                      <div className="h-2 w-16 bg-gray-200 mb-2 rounded-md"></div>
-                      <div className="flex items-end gap-1">
-                        <div className="h-5 w-8 bg-fitness-primary/20 rounded-md"></div>
-                        <div className="h-3 w-4 bg-gray-200 rounded-md"></div>
+                    <div className="bg-white p-3 rounded-lg shadow-sm">
+                      <div className="flex justify-between mb-2">
+                        <div className="h-4 w-24 font-medium text-sm">Weekly Progress</div>
+                        <div className="text-xs text-green-500 font-bold">+12%</div>
                       </div>
-                      <div className="mt-2 h-12 bg-gray-100 rounded-md"></div>
+                      <div className="flex items-end gap-2 h-12">
+                        <div className="h-8 w-4 bg-fitness-primary/20 rounded-sm"></div>
+                        <div className="h-10 w-4 bg-fitness-primary/40 rounded-sm"></div>
+                        <div className="h-6 w-4 bg-fitness-primary/30 rounded-sm"></div>
+                        <div className="h-11 w-4 bg-fitness-primary/60 rounded-sm"></div>
+                        <div className="h-7 w-4 bg-fitness-primary/40 rounded-sm"></div>
+                        <div className="h-12 w-4 bg-fitness-primary rounded-sm"></div>
+                        <div className="h-9 w-4 bg-fitness-primary/70 rounded-sm"></div>
+                      </div>
                     </div>
-                    <div className="bg-white p-3 rounded-md shadow-sm">
-                      <div className="h-2 w-20 bg-gray-200 mb-2 rounded-md"></div>
-                      <div className="flex items-center gap-1">
-                        <div className="h-4 w-4 rounded-full bg-fitness-accent/40"></div>
-                        <div className="h-3 w-12 bg-gray-200 rounded-md"></div>
+                    <div className="bg-white p-3 rounded-lg shadow-sm">
+                      <div className="flex justify-between mb-2">
+                        <div className="h-4 w-24 font-medium text-sm">Calories</div>
+                        <div className="text-xs text-fitness-primary font-bold">1,450/2,000</div>
                       </div>
-                      <div className="mt-2 h-12 bg-gray-100 rounded-md"></div>
+                      <div className="mt-2 h-12 bg-gray-100 rounded-md overflow-hidden">
+                        <div className="h-full w-3/4 bg-gradient-to-r from-fitness-primary to-fitness-accent rounded-md"></div>
+                      </div>
                     </div>
                   </div>
                   
-                  <div className="bg-white p-3 rounded-md shadow-sm">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="h-3 w-24 bg-gray-200 rounded-md"></div>
-                      <div className="h-6 w-16 rounded-md bg-fitness-primary"></div>
+                  <div className="bg-white p-3 rounded-lg shadow-sm">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="text-sm font-medium">Today's Workout</div>
+                      <div className="h-7 w-20 rounded-md bg-fitness-primary flex items-center justify-center text-xs text-white font-medium">Start Now</div>
                     </div>
                     <div className="grid grid-cols-3 gap-2">
-                      <div className="h-16 bg-gray-100 rounded-md flex items-center justify-center">
-                        <div className="h-6 w-6 rounded-full bg-fitness-primary/20"></div>
+                      <div className="h-16 bg-gray-100 rounded-md flex flex-col items-center justify-center p-1">
+                        <div className="h-6 w-6 rounded-full bg-fitness-primary/20 flex items-center justify-center mb-1">
+                          <div className="h-3 w-3 rounded-full bg-fitness-primary"></div>
+                        </div>
+                        <div className="text-xs text-center font-medium">Chest</div>
                       </div>
-                      <div className="h-16 bg-gray-100 rounded-md flex items-center justify-center">
-                        <div className="h-6 w-6 rounded-full bg-fitness-accent/20"></div>
+                      <div className="h-16 bg-gray-100 rounded-md flex flex-col items-center justify-center p-1">
+                        <div className="h-6 w-6 rounded-full bg-fitness-accent/20 flex items-center justify-center mb-1">
+                          <div className="h-3 w-3 rounded-full bg-fitness-accent"></div>
+                        </div>
+                        <div className="text-xs text-center font-medium">Arms</div>
                       </div>
-                      <div className="h-16 bg-gray-100 rounded-md flex items-center justify-center">
-                        <div className="h-6 w-6 rounded-full bg-green-100"></div>
+                      <div className="h-16 bg-gray-100 rounded-md flex flex-col items-center justify-center p-1">
+                        <div className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mb-1">
+                          <div className="h-3 w-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div className="text-xs text-center font-medium">Core</div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="font-bold text-xl mb-2">AI-Powered Dashboard</h3>
-                  <p className="text-sm text-white/90">Track workouts, nutrition and progress in one place</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                  <div className="w-full p-6 text-white">
+                    <h3 className="font-bold text-xl mb-2">AI-Powered Dashboard</h3>
+                    <p className="text-sm text-white/90 mb-3">Track workouts, nutrition and progress in one place</p>
+                    <Link to="/dashboard" className="inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full hover:bg-white/30 transition-colors">
+                      Try It Now <ArrowRight size={14} className="ml-1" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
             
             {/* Floating Elements */}
-            <div className="absolute top-1/2 -right-12 transform -translate-y-1/2 bg-white p-3 rounded-xl shadow-lg rotate-3 hidden lg:block">
+            <div className="absolute top-1/3 -right-8 transform -translate-y-1/2 bg-white p-3 rounded-xl shadow-lg rotate-3 hidden lg:block">
               <div className="flex items-center gap-2">
                 <div className="h-8 w-8 rounded-full bg-green-100 flex items-center justify-center">
                   <TrendingUp className="h-4 w-4 text-green-600" />

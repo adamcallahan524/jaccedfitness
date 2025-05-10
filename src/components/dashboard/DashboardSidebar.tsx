@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useWaitlist } from '../../context/WaitlistContext';
 import {
   Activity,
@@ -17,6 +17,11 @@ import {
 
 const DashboardSidebar = () => {
   const { openWaitlist } = useWaitlist();
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  // Only highlight Overview when exactly on /dashboard
+  const isOverviewActive = currentPath === "/dashboard";
 
   return (
     <aside className="hidden md:block w-64 bg-sidebar-background border-r">
@@ -27,12 +32,10 @@ const DashboardSidebar = () => {
           </h2>
           <NavLink
             to="/dashboard"
-            className={({ isActive }) =>
-              `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
-                isActive
-                  ? "bg-fitness-primary text-white"
-                  : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
-              }`
+            className={
+              isOverviewActive
+                ? "flex items-center gap-3 rounded-lg px-3 py-2 transition-all bg-fitness-primary text-white"
+                : "flex items-center gap-3 rounded-lg px-3 py-2 transition-all text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
             }
           >
             <Home className="h-5 w-5" />

@@ -34,7 +34,7 @@ const GymSavingsSection = () => {
                       <DollarSign size={20} />
                     </div>
                     <h3 className="font-bold text-lg mb-2">Reduce Staffing Costs</h3>
-                    <p className="text-gray-600">Save up to 70% on personal training staff costs through AI automation</p>
+                    <p className="text-gray-600">Save up to 62% on personal training staff costs through AI automation</p>
                   </div>
                   
                   <div className="flex-1 bg-fitness-primary/5 p-4 rounded-xl">
@@ -51,15 +51,15 @@ const GymSavingsSection = () => {
                   <div className="space-y-3">
                     <div className="flex justify-between items-center pb-2 border-b">
                       <span className="font-medium text-gray-700">Traditional Personal Trainers</span>
-                      <span className="font-bold text-red-500">$40-75 / hour</span>
+                      <span className="font-bold text-red-500">$40-65 / hour</span>
                     </div>
                     <div className="flex justify-between items-center pb-2 border-b">
                       <span className="font-medium text-gray-700">Jacced AI Platform</span>
-                      <span className="font-bold text-green-500">$5-12 / member / month</span>
+                      <span className="font-bold text-green-500">$8-15 / member / month</span>
                     </div>
                     <div className="flex justify-between items-center text-sm mt-3">
                       <span className="font-bold">Annual Savings</span>
-                      <span className="font-bold text-green-600">$20,000-40,000 / year</span>
+                      <span className="font-bold text-green-600">$18,000-32,000 / year</span>
                     </div>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ const GymSavingsSection = () => {
               
               {/* Fixed arrow position to be properly centered in the circle */}
               <div className="hidden md:flex absolute -right-6 top-1/2 transform -translate-y-1/2 h-12 w-12 bg-fitness-accent rounded-full items-center justify-center text-white">
-                <ArrowRight size={20} />
+                <ArrowRight size={20} className="mx-auto" />
               </div>
             </div>
           </div>
@@ -104,7 +104,7 @@ const GymSavingsSection = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-1">Member Retention</h3>
-                  <p className="text-gray-600">Members with personalized plans are 83% more likely to continue their membership compared to those without guidance.</p>
+                  <p className="text-gray-600">According to the 2023 IHRSA report, members with personalized plans are 83% more likely to continue their membership compared to those without guidance.</p>
                 </div>
               </div>
               
