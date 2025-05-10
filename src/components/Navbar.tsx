@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -45,13 +44,12 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-6">
             <Link to="/" className="font-medium text-gray-600 hover:text-fitness-primary transition-colors">Home</Link>
             <Button variant="ghost" onClick={openWaitlist}>Pricing</Button>
-            <Button variant="ghost" onClick={openWaitlist}>About</Button>
           </div>
           
           <div className="flex items-center gap-3">
             <Button variant="outline" className="hidden md:block" onClick={openWaitlist}>Log In</Button>
             <Link to="/dashboard">
-              <Button className="bg-fitness-primary hover:bg-fitness-secondary">See It Live In Action</Button>
+              <Button className="bg-fitness-primary hover:bg-fitness-secondary">See It Live</Button>
             </Link>
             <Button 
               variant="ghost" 
@@ -91,15 +89,6 @@ const Navbar = () => {
                   openWaitlist();
                 }}
               >
-                About
-              </button>
-              <button 
-                className="px-3 py-2 rounded-md hover:bg-gray-100 font-medium text-left"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  openWaitlist();
-                }}
-              >
                 Log In
               </button>
               <div className="pt-2">
@@ -108,7 +97,7 @@ const Navbar = () => {
                   className="block w-full px-3 py-2 bg-fitness-primary text-white rounded-md text-center font-medium"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  See It Live In Action
+                  See It Live
                 </Link>
               </div>
             </div>
