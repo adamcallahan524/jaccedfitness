@@ -172,7 +172,7 @@ const Hero = () => {
                     <h3 className="font-bold text-xl mb-2">Gym Manager Dashboard</h3>
                     <p className="text-sm text-white/90 mb-3">Real-time analytics to maximize your gym's potential</p>
                     <Link to="/gym-manager" className="inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full hover:bg-white/30 transition-colors">
-                      See It Live <ArrowRight size={14} className="ml-1" />
+                      See Full Dashboard <ArrowRight size={14} className="ml-1" />
                     </Link>
                   </div>
                 </div>
