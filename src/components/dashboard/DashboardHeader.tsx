@@ -35,7 +35,7 @@ const DashboardHeader = () => {
             <Dumbbell size={14} className="text-white" />
           </div>
         </div>
-        <span className="font-bold text-lg hidden sm:block">Jacced Fitness</span>
+        <span className="font-bold text-lg hidden sm:block">Jacced Fit</span>
       </Link>
       
       <div className="flex items-center gap-4">
