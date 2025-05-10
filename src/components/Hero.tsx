@@ -16,10 +16,6 @@ const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="md:w-1/2 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 mb-6">
-              <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
-              <span className="text-sm font-medium">Transform Your Gym Business</span>
-            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               <span className="gradient-text">AI Fitness Solutions</span> For Modern Gyms
             </h1>
@@ -55,10 +51,10 @@ const Hero = () => {
           </div>
           
           <div className="md:w-1/2 relative">
-            {/* Dashboard Preview Image */}
-            <div className="relative z-10 overflow-hidden rounded-2xl border shadow-xl bg-white">
+            {/* Modern Dashboard Preview Image */}
+            <div className="relative z-10 overflow-hidden rounded-2xl border shadow-xl bg-white transform rotate-1 hover:rotate-0 transition-all duration-500">
               <div className="aspect-[5/3] relative overflow-hidden">
-                {/* Realistic Dashboard Interface */}
+                {/* Modern Dashboard Interface */}
                 <div className="w-full h-full bg-gray-50 p-4">
                   <div className="h-10 bg-white rounded-lg shadow-sm mb-3 flex items-center px-3">
                     <div className="h-4 w-4 rounded-full bg-fitness-primary mr-2"></div>
@@ -96,45 +92,96 @@ const Hero = () => {
                     </div>
                   </div>
                   
+                  <div className="grid grid-cols-2 gap-3 mb-3">
+                    <div className="bg-white p-3 rounded-lg shadow-sm">
+                      <div className="flex items-center mb-2">
+                        <div className="text-sm font-medium">AI Trainer Usage</div>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <div className="flex flex-col">
+                          <span className="text-lg font-bold text-fitness-primary">87%</span>
+                          <span className="text-xs text-gray-500">Member adoption</span>
+                        </div>
+                        <div className="h-16 w-16">
+                          <div className="h-full w-full rounded-full bg-fitness-primary/10 flex items-center justify-center">
+                            <div className="h-12 w-12 rounded-full bg-fitness-primary/20 flex items-center justify-center">
+                              <div className="h-8 w-8 rounded-full bg-fitness-primary/60 flex items-center justify-center text-white text-xs font-medium">
+                                87%
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="bg-white p-3 rounded-lg shadow-sm">
+                      <div className="flex items-center mb-2">
+                        <div className="text-sm font-medium">Member Retention</div>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <div className="flex flex-col">
+                          <div className="flex items-center">
+                            <span className="text-lg font-bold text-green-500">+32%</span>
+                            <svg className="w-4 h-4 text-green-500 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                            </svg>
+                          </div>
+                          <span className="text-xs text-gray-500">Since last quarter</span>
+                        </div>
+                        <div className="flex items-end space-x-1">
+                          <div className="w-3 bg-gray-200 rounded-t-sm h-8"></div>
+                          <div className="w-3 bg-gray-200 rounded-t-sm h-10"></div>
+                          <div className="w-3 bg-gray-200 rounded-t-sm h-6"></div>
+                          <div className="w-3 bg-gray-200 rounded-t-sm h-9"></div>
+                          <div className="w-3 bg-green-500 rounded-t-sm h-12"></div>
+                          <div className="w-3 bg-green-500 rounded-t-sm h-16"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
                   <div className="bg-white p-3 rounded-lg shadow-sm">
                     <div className="flex items-center justify-between mb-3">
-                      <div className="text-sm font-medium">Popular Equipment</div>
-                      <div className="h-7 w-20 rounded-md bg-fitness-primary flex items-center justify-center text-xs text-white font-medium">View Data</div>
+                      <div className="text-sm font-medium">Most Popular Programs</div>
+                      <div className="h-7 w-20 rounded-md bg-fitness-primary flex items-center justify-center text-xs text-white font-medium">View All</div>
                     </div>
                     <div className="grid grid-cols-3 gap-2">
-                      <div className="h-16 bg-gray-100 rounded-md flex flex-col items-center justify-center p-1">
-                        <div className="h-6 w-6 rounded-full bg-fitness-primary/20 flex items-center justify-center mb-1">
-                          <div className="h-3 w-3 rounded-full bg-fitness-primary"></div>
+                      <div className="h-16 bg-gradient-to-br from-purple-50 to-purple-100 rounded-md flex flex-col items-center justify-center p-1">
+                        <div className="h-6 w-6 rounded-full bg-purple-200 flex items-center justify-center mb-1">
+                          <div className="h-3 w-3 rounded-full bg-purple-500"></div>
                         </div>
-                        <div className="text-xs text-center font-medium">Cardio</div>
+                        <div className="text-xs text-center font-medium">HIIT</div>
                       </div>
-                      <div className="h-16 bg-gray-100 rounded-md flex flex-col items-center justify-center p-1">
-                        <div className="h-6 w-6 rounded-full bg-fitness-accent/20 flex items-center justify-center mb-1">
-                          <div className="h-3 w-3 rounded-full bg-fitness-accent"></div>
+                      <div className="h-16 bg-gradient-to-br from-blue-50 to-blue-100 rounded-md flex flex-col items-center justify-center p-1">
+                        <div className="h-6 w-6 rounded-full bg-blue-200 flex items-center justify-center mb-1">
+                          <div className="h-3 w-3 rounded-full bg-blue-500"></div>
                         </div>
-                        <div className="text-xs text-center font-medium">Weights</div>
+                        <div className="text-xs text-center font-medium">Strength</div>
                       </div>
-                      <div className="h-16 bg-gray-100 rounded-md flex flex-col items-center justify-center p-1">
-                        <div className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mb-1">
+                      <div className="h-16 bg-gradient-to-br from-green-50 to-green-100 rounded-md flex flex-col items-center justify-center p-1">
+                        <div className="h-6 w-6 rounded-full bg-green-200 flex items-center justify-center mb-1">
                           <div className="h-3 w-3 rounded-full bg-green-500"></div>
                         </div>
-                        <div className="text-xs text-center font-medium">Machines</div>
+                        <div className="text-xs text-center font-medium">Cardio</div>
                       </div>
                     </div>
                   </div>
                 </div>
                 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                   <div className="w-full p-6 text-white">
                     <h3 className="font-bold text-xl mb-2">Gym Manager Dashboard</h3>
                     <p className="text-sm text-white/90 mb-3">Real-time analytics to maximize your gym's potential</p>
-                    <Link to="/gym-manager" className="inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full hover:bg-white/30 transition-colors">
-                      Try It Live <ArrowRight size={14} className="ml-1" />
+                    <Link to="/dashboard" className="inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full hover:bg-white/30 transition-colors">
+                      See It Live <ArrowRight size={14} className="ml-1" />
                     </Link>
                   </div>
                 </div>
               </div>
             </div>
+            
+            {/* Decorative Elements */}
+            <div className="absolute -top-6 -right-6 w-24 h-24 bg-fitness-accent/20 rounded-full blur-xl"></div>
+            <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-fitness-primary/20 rounded-full blur-xl"></div>
           </div>
         </div>
       </div>

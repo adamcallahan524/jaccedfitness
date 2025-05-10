@@ -99,6 +99,10 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight;
+  }
 }
 
 @layer components {
@@ -107,7 +111,7 @@
   }
   
   .fitness-card {
-    @apply p-6 rounded-xl border bg-white shadow-md transition-all duration-300 hover:shadow-lg;
+    @apply p-6 rounded-xl border bg-white shadow-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px];
   }
   
   .fitness-button {

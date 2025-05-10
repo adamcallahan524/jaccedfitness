@@ -40,8 +40,8 @@ const Features = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {featureItems.map((feature, index) => (
-            <div key={index} className="fitness-card bg-white hover:border-fitness-primary">
-              <div className="mb-4 rounded-full bg-fitness-muted p-3 inline-block">
+            <div key={index} className="fitness-card bg-white hover:border-fitness-primary group">
+              <div className="mb-4 rounded-full bg-fitness-primary/10 p-3 inline-block group-hover:bg-fitness-primary/20 transition-all">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
