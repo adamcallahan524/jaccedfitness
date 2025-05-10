@@ -68,7 +68,7 @@ const Hero = () => {
                   <div className="grid grid-cols-2 gap-3 mb-3">
                     <div className="bg-white p-3 rounded-lg shadow-sm">
                       <div className="flex justify-between mb-2">
-                        <div className="h-4 w-24 font-medium text-sm">Member Engagement</div>
+                        <div className="h-4 w-24 font-medium text-sm">Engagement</div>
                         <div className="text-xs text-green-500 font-bold">+23%</div>
                       </div>
                       <div className="flex items-end gap-2 h-12">
