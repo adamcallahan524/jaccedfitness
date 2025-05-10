@@ -22,13 +22,6 @@
     <div id="root"></div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script>
-  // Create a dynamic script element that points to the bundled JavaScript file
-  document.addEventListener('DOMContentLoaded', function() {
-    const script = document.createElement('script');
-    script.src = './dist/assets/index.js'; // This should point to your bundled JS file
-    document.body.appendChild(script);
-  });
-</script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
