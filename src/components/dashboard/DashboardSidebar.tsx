@@ -13,6 +13,7 @@ import {
   Target,
   MessageCircle,
   Building,
+  Apple,
 } from 'lucide-react';
 
 const DashboardSidebar = () => {
@@ -48,42 +49,62 @@ const DashboardSidebar = () => {
             <Home className="h-5 w-5" />
             <span>Overview</span>
           </NavLink>
-          <button
-            onClick={() => {
-              openWaitlist();
-            }}
-            className="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 hover:text-fitness-primary hover:bg-gray-100 transition-all text-left"
+             <NavLink
+            to="/dashboard/workouts"
+            className={({ isActive }) =>
+              `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
+                isActive
+                  ? "bg-fitness-primary text-white"
+                  : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
+              }`
+            }
+            onClick={scrollToTop}
           >
             <Dumbbell className="h-5 w-5" />
             <span>Workouts</span>
-          </button>
-          <button
-            onClick={() => {
-              openWaitlist();
-            }}
-            className="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 hover:text-fitness-primary hover:bg-gray-100 transition-all text-left"
+          </NavLink>
+          <NavLink
+            to="/dashboard/nutrition"
+            className={({ isActive }) =>
+              `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
+                isActive
+                  ? "bg-fitness-primary text-white"
+                  : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
+              }`
+            }
+            onClick={scrollToTop}
           >
-            <BarChart className="h-5 w-5" />
+            <Apple className="h-5 w-5" />
             <span>Nutrition</span>
-          </button>
-          <button
-            onClick={() => {
-              openWaitlist();
-            }}
-            className="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 hover:text-fitness-primary hover:bg-gray-100 transition-all text-left"
+          </NavLink>
+        <NavLink
+            to="/dashboard/progress"
+            className={({ isActive }) =>
+              `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
+                isActive
+                  ? "bg-fitness-primary text-white"
+                  : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
+              }`
+            }
+            onClick={scrollToTop}
           >
             <TrendingUp className="h-5 w-5" />
             <span>Progress</span>
-          </button>
-          <button
-            onClick={() => {
-              openWaitlist();
-            }}
-            className="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 hover:text-fitness-primary hover:bg-gray-100 transition-all text-left"
+          </NavLink>
+         <NavLink
+            to="/dashboard/gym-check-in"
+            className={({ isActive }) =>
+              `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
+                isActive
+                  ? "bg-fitness-primary text-white"
+                  : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
+              }`
+            }
+            onClick={scrollToTop}
           >
             <Activity className="h-5 w-5" />
             <span>Gym Check-in</span>
-          </button>
+          </NavLink>
           <NavLink
             to="/dashboard/ai-trainer"
             className={({ isActive }) =>
