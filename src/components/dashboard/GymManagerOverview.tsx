@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -97,7 +96,7 @@ const GymManagerOverview = () => {
               <UserPlus size={16} />
               <span>Add Members</span>
             </Button>
-            <Button onClick={openWaitlist} className="bg-gradient-to-r from-fitness-primary to-fitness-accent text-white shadow-sm">
+            <Button onClick={openWaitlist} className="bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm">
               Generate Report
             </Button>
           </div>
@@ -105,8 +104,7 @@ const GymManagerOverview = () => {
         
         {/* Quick Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <Card className="bg-gradient-to-br from-purple-50 to-blue-50 border-blue-100/50 hover:shadow-md transition-shadow overflow-hidden">
-            <div className="absolute top-0 right-0 h-20 w-20 bg-blue-500/10 rounded-bl-full"></div>
+          <Card className="hover:shadow-md transition-shadow">
             <CardContent className="p-4">
               <div className="flex justify-between items-start mb-2">
                 <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
@@ -123,8 +121,7 @@ const GymManagerOverview = () => {
             </CardContent>
           </Card>
           
-          <Card className="bg-gradient-to-br from-green-50 to-teal-50 border-green-100/50 hover:shadow-md transition-shadow overflow-hidden">
-            <div className="absolute top-0 right-0 h-20 w-20 bg-green-500/10 rounded-bl-full"></div>
+          <Card className="hover:shadow-md transition-shadow">
             <CardContent className="p-4">
               <div className="flex justify-between items-start mb-2">
                 <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
@@ -143,8 +140,7 @@ const GymManagerOverview = () => {
             </CardContent>
           </Card>
           
-          <Card className="bg-gradient-to-br from-amber-50 to-yellow-50 border-amber-100/50 hover:shadow-md transition-shadow overflow-hidden">
-            <div className="absolute top-0 right-0 h-20 w-20 bg-amber-500/10 rounded-bl-full"></div>
+          <Card className="hover:shadow-md transition-shadow">
             <CardContent className="p-4">
               <div className="flex justify-between items-start mb-2">
                 <div className="h-10 w-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600">
@@ -163,8 +159,7 @@ const GymManagerOverview = () => {
             </CardContent>
           </Card>
           
-          <Card className="bg-gradient-to-br from-red-50 to-rose-50 border-red-100/50 hover:shadow-md transition-shadow overflow-hidden">
-            <div className="absolute top-0 right-0 h-20 w-20 bg-red-500/10 rounded-bl-full"></div>
+          <Card className="hover:shadow-md transition-shadow">
             <CardContent className="p-4">
               <div className="flex justify-between items-start mb-2">
                 <div className="h-10 w-10 rounded-full bg-red-100 flex items-center justify-center text-red-600">
@@ -201,12 +196,9 @@ const GymManagerOverview = () => {
         <TabsContent value="overview" className="space-y-6">
           {/* Revenue and Member Activity */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <Card className="lg:col-span-2 overflow-hidden border-0 shadow-md">
-              <CardHeader className="bg-gradient-to-r from-blue-600 to-purple-600 text-white flex items-center justify-between">
+            <Card className="lg:col-span-2 overflow-hidden border-0 shadow">
+              <CardHeader className="bg-indigo-600 text-white flex items-center justify-between p-4">
                 <CardTitle>Revenue Growth</CardTitle>
-                <Button variant="ghost" onClick={openWaitlist} className="text-white hover:bg-white/20 text-xs">
-                  View Details
-                </Button>
               </CardHeader>
               <CardContent className="p-6">
                 <div className="h-[300px]">
@@ -214,8 +206,8 @@ const GymManagerOverview = () => {
                     <AreaChart data={revenueData}>
                       <defs>
                         <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
-                          <stop offset="95%" stopColor="#8884d8" stopOpacity={0.1}/>
+                          <stop offset="5%" stopColor="#4F46E5" stopOpacity={0.8}/>
+                          <stop offset="95%" stopColor="#4F46E5" stopOpacity={0.1}/>
                         </linearGradient>
                       </defs>
                       <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
@@ -232,7 +224,7 @@ const GymManagerOverview = () => {
                       <Area 
                         type="monotone" 
                         dataKey="value" 
-                        stroke="#8884d8" 
+                        stroke="#4F46E5" 
                         strokeWidth={3}
                         fillOpacity={1} 
                         fill="url(#colorRevenue)"
@@ -266,8 +258,8 @@ const GymManagerOverview = () => {
               </CardContent>
             </Card>
             
-            <Card className="overflow-hidden border-0 shadow-md">
-              <CardHeader className="bg-gradient-to-r from-green-600 to-teal-600 text-white">
+            <Card className="overflow-hidden border-0 shadow">
+              <CardHeader className="bg-indigo-600 text-white p-4">
                 <CardTitle>Member Retention</CardTitle>
               </CardHeader>
               <CardContent className="p-6 space-y-6">
@@ -286,13 +278,15 @@ const GymManagerOverview = () => {
                   <div className="flex items-center mb-2">
                     <span className="text-3xl font-bold mr-3">{retentionMetrics.overall}%</span>
                     <div className="flex-1">
-                      <Progress value={retentionMetrics.overall} className="h-3" />
+                      <Progress value={retentionMetrics.overall} className="h-3 bg-gray-100">
+                        <div className="h-full bg-indigo-600" style={{ width: `${retentionMetrics.overall}%` }}></div>
+                      </Progress>
                     </div>
                   </div>
                 </div>
                 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-green-50 p-4 rounded-lg">
+                  <div className="bg-gray-50 p-4 rounded-lg">
                     <div className="flex items-center gap-2">
                       <ArrowUpRight className="h-5 w-5 text-green-600" />
                       <p className="text-sm text-gray-700">New Members</p>
@@ -301,7 +295,7 @@ const GymManagerOverview = () => {
                     <p className="text-xs text-gray-500 mt-1">This month</p>
                   </div>
                   
-                  <div className="bg-red-50 p-4 rounded-lg">
+                  <div className="bg-gray-50 p-4 rounded-lg">
                     <div className="flex items-center gap-2">
                       <ArrowDownRight className="h-5 w-5 text-red-600" />
                       <p className="text-sm text-gray-700">Churned</p>
@@ -333,8 +327,8 @@ const GymManagerOverview = () => {
 
           {/* Weekly Member Activity & Top Workouts */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <Card className="overflow-hidden border-0 shadow-md">
-              <CardHeader className="bg-gradient-to-r from-amber-500 to-orange-500 text-white">
+            <Card className="overflow-hidden border-0 shadow">
+              <CardHeader className="bg-indigo-600 text-white p-4">
                 <CardTitle>Weekly Member Activity</CardTitle>
               </CardHeader>
               <CardContent className="p-6">
@@ -355,9 +349,9 @@ const GymManagerOverview = () => {
                       <Line 
                         type="monotone" 
                         dataKey="value" 
-                        stroke="#F59E0B"
+                        stroke="#4F46E5"
                         strokeWidth={3}
-                        dot={{ r: 6, strokeWidth: 2, stroke: '#FFF', fill: '#F59E0B' }}
+                        dot={{ r: 6, strokeWidth: 2, stroke: '#FFF', fill: '#4F46E5' }}
                         activeDot={{ r: 8 }}
                       />
                     </LineChart>
@@ -379,8 +373,8 @@ const GymManagerOverview = () => {
               </CardContent>
             </Card>
             
-            <Card className="overflow-hidden border-0 shadow-md">
-              <CardHeader className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white">
+            <Card className="overflow-hidden border-0 shadow">
+              <CardHeader className="bg-indigo-600 text-white p-4">
                 <CardTitle>Top Performing Workouts</CardTitle>
               </CardHeader>
               <CardContent className="p-6">
@@ -393,10 +387,10 @@ const GymManagerOverview = () => {
                     >
                       <div className="flex items-center gap-3">
                         <div className={`h-10 w-10 rounded-lg flex items-center justify-center text-white font-bold ${
-                          index === 0 ? 'bg-gradient-to-br from-yellow-400 to-amber-600' :
-                          index === 1 ? 'bg-gradient-to-br from-gray-300 to-gray-500' :
-                          index === 2 ? 'bg-gradient-to-br from-amber-700 to-amber-900' :
-                          'bg-gradient-to-br from-fitness-muted to-gray-400'
+                          index === 0 ? 'bg-indigo-600' :
+                          index === 1 ? 'bg-indigo-500' :
+                          index === 2 ? 'bg-indigo-400' :
+                          'bg-indigo-300'
                         }`}>
                           #{index + 1}
                         </div>
@@ -429,8 +423,8 @@ const GymManagerOverview = () => {
         </TabsContent>
         
         <TabsContent value="members" className="space-y-6">
-          <Card className="overflow-hidden border-0 shadow-md">
-            <CardHeader className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white flex items-center justify-between">
+          <Card className="overflow-hidden border-0 shadow">
+            <CardHeader className="bg-indigo-600 text-white flex items-center justify-between p-4">
               <CardTitle>Member Management</CardTitle>
               <Button variant="ghost" onClick={openWaitlist} className="text-white hover:bg-white/20 flex items-center gap-1">
                 <UserPlus size={14} />
@@ -506,8 +500,8 @@ const GymManagerOverview = () => {
           </Card>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="overflow-hidden border-0 shadow-md">
-              <CardHeader className="bg-gradient-to-r from-green-600 to-emerald-600 text-white">
+            <Card className="overflow-hidden border-0 shadow">
+              <CardHeader className="bg-indigo-600 text-white p-4">
                 <CardTitle>Re-engagement Opportunities</CardTitle>
               </CardHeader>
               <CardContent className="p-6 space-y-4">
@@ -549,8 +543,8 @@ const GymManagerOverview = () => {
               </CardContent>
             </Card>
             
-            <Card className="overflow-hidden border-0 shadow-md">
-              <CardHeader className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white">
+            <Card className="overflow-hidden border-0 shadow">
+              <CardHeader className="bg-indigo-600 text-white p-4">
                 <CardTitle>Member Analytics</CardTitle>
               </CardHeader>
               <CardContent className="p-6">
@@ -622,8 +616,8 @@ const GymManagerOverview = () => {
         </TabsContent>
         
         <TabsContent value="licenses" className="space-y-6">
-          <Card className="overflow-hidden border-0 shadow-md">
-            <CardHeader className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white flex items-center justify-between">
+          <Card className="overflow-hidden border-0 shadow">
+            <CardHeader className="bg-indigo-600 text-white flex items-center justify-between p-4">
               <CardTitle>License Management</CardTitle>
               <Button variant="ghost" onClick={openWaitlist} className="text-white hover:bg-white/20">
                 Add Licenses
@@ -631,18 +625,18 @@ const GymManagerOverview = () => {
             </CardHeader>
             <CardContent className="p-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                   <h3 className="font-medium text-sm text-gray-500">Total Licenses</h3>
                   <div className="text-2xl font-bold mt-1">{licenseData.total}</div>
                   <div className="flex items-center justify-between mt-2">
                     <span className="text-xs text-gray-500">Enterprise Plan</span>
-                    <Button variant="ghost" size="sm" onClick={openWaitlist} className="h-7 text-xs text-blue-600 hover:text-blue-700 hover:bg-blue-50 p-0">
+                    <Button variant="ghost" size="sm" onClick={openWaitlist} className="h-7 text-xs text-indigo-600 hover:text-indigo-700 hover:bg-indigo-50 p-0">
                       Upgrade
                     </Button>
                   </div>
                 </div>
                 
-                <div className="bg-green-50 p-4 rounded-lg border border-green-100">
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                   <h3 className="font-medium text-sm text-gray-500">Available Licenses</h3>
                   <div className="text-2xl font-bold mt-1">{licenseData.total - licenseData.used}</div>
                   <div className="flex items-center justify-between mt-2">
@@ -653,7 +647,7 @@ const GymManagerOverview = () => {
                   </div>
                 </div>
                 
-                <div className="bg-amber-50 p-4 rounded-lg border border-amber-100">
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                   <h3 className="font-medium text-sm text-gray-500">License Expiration</h3>
                   <div className="text-2xl font-bold mt-1">45 days</div>
                   <div className="flex items-center justify-between mt-2">
@@ -670,22 +664,22 @@ const GymManagerOverview = () => {
                 <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
                   <div className="flex h-full">
                     <div 
-                      className="bg-green-500 h-full" 
+                      className="bg-indigo-600 h-full" 
                       style={{ width: `${(licenseData.active / licenseData.total) * 100}%` }}
                     ></div>
                     <div 
-                      className="bg-amber-500 h-full" 
+                      className="bg-indigo-300 h-full" 
                       style={{ width: `${(licenseData.inactive / licenseData.total) * 100}%` }}
                     ></div>
                   </div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 mt-2">
                   <div className="flex items-center">
-                    <span className="h-2 w-2 rounded-full bg-green-500 mr-2"></span>
+                    <span className="h-2 w-2 rounded-full bg-indigo-600 mr-2"></span>
                     <span>Active ({licenseData.active})</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="h-2 w-2 rounded-full bg-amber-500 mr-2"></span>
+                    <span className="h-2 w-2 rounded-full bg-indigo-300 mr-2"></span>
                     <span>Inactive ({licenseData.inactive})</span>
                   </div>
                   <div className="flex items-center">
