@@ -29,14 +29,13 @@ const DashboardHeader = () => {
 
   return (
     <header className="bg-white border-b px-4 py-3 flex items-center justify-between sticky top-0 z-50">
-      <Link to="/" className="flex items-center gap-2">
-        <div className="h-8 w-8 rounded-full bg-gradient-to-br from-fitness-primary to-fitness-accent flex items-center justify-center">
-          <div className="flex items-center justify-center">
-            <Dumbbell size={14} className="text-white" />
-          </div>
-        </div>
-        <span className="font-bold text-lg hidden sm:block">Jacced Fitness</span>
-      </Link>
+   <Link to="/" className="flex items-center gap-2">
+  <img 
+    src="/jaccedlogo.png" 
+    alt="Jacced Fitness Logo" 
+    className="h-15 w-auto" 
+  />
+</Link>
       
       <div className="flex items-center gap-4">
         <Dialog open={notificationsOpen} onOpenChange={setNotificationsOpen}>
