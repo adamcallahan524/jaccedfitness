@@ -173,12 +173,13 @@ const DashboardSidebar = () => {
         <div className="mt-auto px-3">
           <div className="rounded-lg bg-gray-100 p-4 border border-gray-200">
             <p className="text-sm font-medium mb-3">Need personalized help?</p>
-            <button 
-              onClick={openWaitlist}
+             <NavLink
+            to="/dashboard/ai-trainer"
               className="w-full px-3 py-2 text-xs rounded-lg bg-fitness-primary text-white hover:bg-fitness-primary/90 transition-colors"
+               onClick={scrollToTop}
             >
               Talk to AI Coach
-            </button>
+            </NavLink>
           </div>
         </div>
       </div>
