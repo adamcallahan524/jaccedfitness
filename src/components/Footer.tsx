@@ -14,14 +14,13 @@ const Footer = () => {
         <div className="container mx-auto py-12 px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <Link to="/" className="flex items-center gap-2 mb-4">
-                <div className="h-8 w-8 rounded-full bg-gradient-to-br from-fitness-primary to-fitness-accent flex items-center justify-center">
-                  <div className="flex items-center justify-center">
-                    <Dumbbell size={14} className="text-white" />
-                  </div>
-                </div>
-                <span className="font-bold text-lg">Jacced Fitness</span>
-              </Link>
+             <Link to="/" className="flex items-center gap-2">
+  <img 
+    src="/jaccedlogo.png" 
+    alt="Jacced Fitness Logo" 
+    className="h-15 w-auto" 
+  />
+</Link>
               <p className="text-gray-600 mb-4">
                 Your AI-powered fitness companion for gyms and fitness centers.
               </p>
