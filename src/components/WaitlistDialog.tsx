@@ -15,6 +15,10 @@ const WaitlistDialog: React.FC<WaitlistDialogProps> = ({ open, onOpenChange }) =
     onOpenChange(false);
   };
 
+  const handleMeetTrainer = () => {
+    onOpenChange(false);
+  };
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[425px]">
@@ -36,7 +40,7 @@ const WaitlistDialog: React.FC<WaitlistDialogProps> = ({ open, onOpenChange }) =
               Join Waitlist
             </Button>
             
-            <Link to="/dashboard/ai-trainer" onClick={() => onOpenChange(false)}>
+            <Link to="/dashboard/ai-trainer" onClick={handleMeetTrainer}>
               <Button 
                 variant="outline"
                 className="w-full border-fitness-primary text-fitness-primary hover:bg-fitness-primary/10"

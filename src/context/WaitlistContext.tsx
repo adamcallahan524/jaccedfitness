@@ -4,6 +4,8 @@ import WaitlistDialog from '../components/WaitlistDialog';
 
 interface WaitlistContextType {
   openWaitlist: () => void;
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
 }
 
 const WaitlistContext = createContext<WaitlistContextType | undefined>(undefined);
@@ -20,11 +22,12 @@ export const WaitlistProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [isOpen, setIsOpen] = useState(false);
   
   const openWaitlist = () => {
+    console.log("Opening waitlist dialog");
     setIsOpen(true);
   };
 
   return (
-    <WaitlistContext.Provider value={{ openWaitlist }}>
+    <WaitlistContext.Provider value={{ openWaitlist, isOpen, setIsOpen }}>
       {children}
       <WaitlistDialog open={isOpen} onOpenChange={setIsOpen} />
     </WaitlistContext.Provider>

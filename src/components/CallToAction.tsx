@@ -6,6 +6,11 @@ import { useWaitlist } from '../context/WaitlistContext';
 const CallToAction = () => {
   const { openWaitlist } = useWaitlist();
 
+  const handleOpenWaitlist = (e: React.MouseEvent) => {
+    e.preventDefault();
+    openWaitlist();
+  };
+
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto">
@@ -23,7 +28,7 @@ const CallToAction = () => {
                 Meet Your Trainer
               </Link>
               <button 
-                onClick={openWaitlist}
+                onClick={handleOpenWaitlist}
                 className="px-8 py-4 rounded-full font-medium border border-white text-white hover:bg-white/10 transition-all duration-300 text-center"
               >
                 For Gym Owners

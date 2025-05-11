@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Dumbbell, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useWaitlist } from '../context/WaitlistContext';
 
 const Navbar = () => {
@@ -32,27 +32,32 @@ const Navbar = () => {
     window.scrollTo(0, 0);
   };
 
+  const handleOpenWaitlist = (e: React.MouseEvent) => {
+    e.preventDefault();
+    openWaitlist();
+  };
+
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? "bg-white/95 shadow-sm backdrop-blur-md" : "bg-white/90 backdrop-blur-md"
       } border-b`}>
         <div className="container mx-auto flex items-center justify-between py-4 px-4">
-         <Link to="/" className="flex items-center gap-2" onClick={scrollToTop}>
-  <img 
-    src="/jaccedlogo.png" 
-    alt="Jacced Fitness Logo" 
-    className="h-14 w-auto" 
-  />
-</Link>
+          <Link to="/" className="flex items-center gap-2" onClick={scrollToTop}>
+            <img 
+              src="/jaccedlogo.png" 
+              alt="Jacced Fitness Logo" 
+              className="h-14 w-auto" 
+            />
+          </Link>
           
           <div className="hidden md:flex items-center gap-6">
             <Link to="/" className="font-medium text-gray-600 hover:text-fitness-primary transition-colors" onClick={scrollToTop}>Home</Link>
-            <Button variant="ghost" onClick={openWaitlist}>Pricing</Button>
+            <Button variant="ghost" onClick={handleOpenWaitlist}>Pricing</Button>
           </div>
           
           <div className="flex items-center gap-3">
-            <Button variant="outline" className="hidden md:block" onClick={openWaitlist}>Log In</Button>
+            <Button variant="outline" className="hidden md:block" onClick={handleOpenWaitlist}>Log In</Button>
             <Link to="/dashboard/ai-trainer" onClick={scrollToTop}>
               <Button className="bg-fitness-primary hover:bg-fitness-secondary">Meet Your Trainer</Button>
             </Link>
