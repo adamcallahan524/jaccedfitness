@@ -18,7 +18,7 @@ const Footer = () => {
   <img 
     src="/jaccedlogo.png" 
     alt="Jacced Fitness Logo" 
-    className="h-15 w-auto" 
+    className="h-14 w-auto" 
   />
 </Link>
               <p className="text-gray-600 mb-4">
