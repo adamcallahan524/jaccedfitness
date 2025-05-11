@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 import { Dumbbell } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { useWaitlist } from '../context/WaitlistContext';
 
 const Footer = () => {
   const [contactDialogOpen, setContactDialogOpen] = useState(false);
+  const { openWaitlist } = useWaitlist();
 
   return (
     <>
@@ -32,7 +34,7 @@ const Footer = () => {
                 <ul className="space-y-2">
                   <li><Button variant="link" className="p-0 h-auto text-gray-600 hover:text-fitness-primary" onClick={() => window.open('/dashboard/ai-trainer', '_blank')}>Demo</Button></li>
                   <li><Button variant="link" className="p-0 h-auto text-gray-600 hover:text-fitness-primary" onClick={() => window.open('/gym-manager', '_blank')}>Gym Manager Demo</Button></li>
-                  <li><Button variant="link" className="p-0 h-auto text-gray-600 hover:text-fitness-primary" onClick={() => document.getElementById('waitlist-button')?.click()}>Join Waitlist</Button></li>
+                  <li><Button variant="link" className="p-0 h-auto text-gray-600 hover:text-fitness-primary" onClick={openWaitlist}>Join Waitlist</Button></li>
                   <li><Button variant="link" className="p-0 h-auto text-gray-600 hover:text-fitness-primary" onClick={() => setContactDialogOpen(true)}>Contact</Button></li>
                 </ul>
               </div>

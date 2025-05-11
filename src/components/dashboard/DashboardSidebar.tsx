@@ -48,62 +48,42 @@ const DashboardSidebar = () => {
             <Home className="h-5 w-5" />
             <span>Overview</span>
           </NavLink>
-          <NavLink
-            to="/dashboard/workouts"
-            className={({ isActive }) =>
-              `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
-                isActive
-                  ? "bg-fitness-primary text-white"
-                  : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
-              }`
-            }
-            onClick={scrollToTop}
+          <button
+            onClick={() => {
+              openWaitlist();
+            }}
+            className="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 hover:text-fitness-primary hover:bg-gray-100 transition-all text-left"
           >
             <Dumbbell className="h-5 w-5" />
             <span>Workouts</span>
-          </NavLink>
-          <NavLink
-            to="/dashboard/nutrition"
-            className={({ isActive }) =>
-              `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
-                isActive
-                  ? "bg-fitness-primary text-white"
-                  : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
-              }`
-            }
-            onClick={scrollToTop}
+          </button>
+          <button
+            onClick={() => {
+              openWaitlist();
+            }}
+            className="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 hover:text-fitness-primary hover:bg-gray-100 transition-all text-left"
           >
             <BarChart className="h-5 w-5" />
             <span>Nutrition</span>
-          </NavLink>
-          <NavLink
-            to="/dashboard/progress"
-            className={({ isActive }) =>
-              `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
-                isActive
-                  ? "bg-fitness-primary text-white"
-                  : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
-              }`
-            }
-            onClick={scrollToTop}
+          </button>
+          <button
+            onClick={() => {
+              openWaitlist();
+            }}
+            className="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 hover:text-fitness-primary hover:bg-gray-100 transition-all text-left"
           >
             <TrendingUp className="h-5 w-5" />
             <span>Progress</span>
-          </NavLink>
-          <NavLink
-            to="/dashboard/gym-check-in"
-            className={({ isActive }) =>
-              `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
-                isActive
-                  ? "bg-fitness-primary text-white"
-                  : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
-              }`
-            }
-            onClick={scrollToTop}
+          </button>
+          <button
+            onClick={() => {
+              openWaitlist();
+            }}
+            className="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 hover:text-fitness-primary hover:bg-gray-100 transition-all text-left"
           >
             <Activity className="h-5 w-5" />
             <span>Gym Check-in</span>
-          </NavLink>
+          </button>
           <NavLink
             to="/dashboard/ai-trainer"
             className={({ isActive }) =>

@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useWaitlist } from '../context/WaitlistContext';
 
 const CallToAction = () => {
+  const { openWaitlist } = useWaitlist();
+
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto">
@@ -14,17 +17,17 @@ const CallToAction = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
-                to="/dashboard" 
+                to="/dashboard/ai-trainer" 
                 className="px-8 py-4 rounded-full font-medium bg-white text-fitness-primary hover:bg-opacity-90 transition-all duration-300 text-center hover:shadow-lg hover:scale-105"
               >
-                See It Live
+                Meet Your Trainer
               </Link>
-              <Link 
-                to="/gym-manager" 
+              <button 
+                onClick={openWaitlist}
                 className="px-8 py-4 rounded-full font-medium border border-white text-white hover:bg-white/10 transition-all duration-300 text-center"
               >
                 For Gym Owners
-              </Link>
+              </button>
             </div>
           </div>
         </div>
