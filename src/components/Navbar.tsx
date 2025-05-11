@@ -32,14 +32,13 @@ const Navbar = () => {
         scrolled ? "bg-white/95 shadow-sm backdrop-blur-md" : "bg-white/90 backdrop-blur-md"
       } border-b`}>
         <div className="container mx-auto flex items-center justify-between py-4 px-4">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-fitness-primary to-fitness-accent flex items-center justify-center">
-              <div className="flex items-center justify-center">
-                <Dumbbell size={18} className="text-white" />
-              </div>
-            </div>
-            <span className="font-bold text-xl">Jacced Fitness</span>
-          </Link>
+         <Link to="/" className="flex items-center gap-2">
+  <img 
+    src="/jaccedlogo.png" 
+    alt="Jacced Fitness Logo" 
+    className="h-10 w-auto" 
+  />
+</Link>
           
           <div className="hidden md:flex items-center gap-6">
             <Link to="/" className="font-medium text-gray-600 hover:text-fitness-primary transition-colors">Home</Link>
