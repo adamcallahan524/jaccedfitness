@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -26,13 +27,18 @@ const Navbar = () => {
     setMobileMenuOpen(false);
   }, [location]);
 
+  // Helper function to scroll to top on navigation
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? "bg-white/95 shadow-sm backdrop-blur-md" : "bg-white/90 backdrop-blur-md"
       } border-b`}>
         <div className="container mx-auto flex items-center justify-between py-4 px-4">
-         <Link to="/" className="flex items-center gap-2">
+         <Link to="/" className="flex items-center gap-2" onClick={scrollToTop}>
   <img 
     src="/jaccedlogo.png" 
     alt="Jacced Fitness Logo" 
@@ -41,14 +47,14 @@ const Navbar = () => {
 </Link>
           
           <div className="hidden md:flex items-center gap-6">
-            <Link to="/" className="font-medium text-gray-600 hover:text-fitness-primary transition-colors">Home</Link>
+            <Link to="/" className="font-medium text-gray-600 hover:text-fitness-primary transition-colors" onClick={scrollToTop}>Home</Link>
             <Button variant="ghost" onClick={openWaitlist}>Pricing</Button>
           </div>
           
           <div className="flex items-center gap-3">
             <Button variant="outline" className="hidden md:block" onClick={openWaitlist}>Log In</Button>
-            <Link to="/dashboard">
-              <Button className="bg-fitness-primary hover:bg-fitness-secondary">See It Live</Button>
+            <Link to="/dashboard/ai-trainer" onClick={scrollToTop}>
+              <Button className="bg-fitness-primary hover:bg-fitness-secondary">Meet Your Trainer</Button>
             </Link>
             <Button 
               variant="ghost" 
@@ -68,7 +74,10 @@ const Navbar = () => {
               <Link 
                 to="/" 
                 className="px-3 py-2 rounded-md hover:bg-gray-100 font-medium"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  scrollToTop();
+                }}
               >
                 Home
               </Link>
@@ -92,11 +101,14 @@ const Navbar = () => {
               </button>
               <div className="pt-2">
                 <Link 
-                  to="/dashboard"
+                  to="/dashboard/ai-trainer"
                   className="block w-full px-3 py-2 bg-fitness-primary text-white rounded-md text-center font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    scrollToTop();
+                  }}
                 >
-                  See It Live
+                  Meet Your Trainer
                 </Link>
               </div>
             </div>

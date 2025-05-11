@@ -23,12 +23,18 @@ const DashboardSidebar = () => {
   // Only highlight Overview when exactly on /dashboard
   const isOverviewActive = currentPath === "/dashboard";
 
+  // Helper function to scroll to top on navigation
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <aside className="hidden md:block w-64 bg-sidebar-background border-r">
       <div className="h-full py-6 px-3 flex flex-col">
-        <div className="space-y-1">
+        {/* Individual Dashboard Section */}
+        <div className="space-y-1 mb-6">
           <h2 className="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-            Dashboard
+            Individual Dashboard
           </h2>
           <NavLink
             to="/dashboard"
@@ -37,6 +43,7 @@ const DashboardSidebar = () => {
                 ? "flex items-center gap-3 rounded-lg px-3 py-2 transition-all bg-fitness-primary text-white"
                 : "flex items-center gap-3 rounded-lg px-3 py-2 transition-all text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
             }
+            onClick={scrollToTop}
           >
             <Home className="h-5 w-5" />
             <span>Overview</span>
@@ -50,6 +57,7 @@ const DashboardSidebar = () => {
                   : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
               }`
             }
+            onClick={scrollToTop}
           >
             <Dumbbell className="h-5 w-5" />
             <span>Workouts</span>
@@ -63,6 +71,7 @@ const DashboardSidebar = () => {
                   : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
               }`
             }
+            onClick={scrollToTop}
           >
             <BarChart className="h-5 w-5" />
             <span>Nutrition</span>
@@ -76,6 +85,7 @@ const DashboardSidebar = () => {
                   : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
               }`
             }
+            onClick={scrollToTop}
           >
             <TrendingUp className="h-5 w-5" />
             <span>Progress</span>
@@ -89,6 +99,7 @@ const DashboardSidebar = () => {
                   : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
               }`
             }
+            onClick={scrollToTop}
           >
             <Activity className="h-5 w-5" />
             <span>Gym Check-in</span>
@@ -102,10 +113,18 @@ const DashboardSidebar = () => {
                   : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
               }`
             }
+            onClick={scrollToTop}
           >
             <MessageCircle className="h-5 w-5" />
             <span>AI Trainer</span>
           </NavLink>
+        </div>
+        
+        {/* Gym Dashboard Section */}
+        <div className="space-y-1 mb-6">
+          <h2 className="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+            Gym Dashboard
+          </h2>
           <NavLink
             to="/gym-manager"
             className={({ isActive }) =>
@@ -115,13 +134,15 @@ const DashboardSidebar = () => {
                   : "text-gray-700 hover:text-fitness-primary hover:bg-gray-100"
               }`
             }
+            onClick={scrollToTop}
           >
             <Building className="h-5 w-5" />
             <span>Gym Manager</span>
           </NavLink>
         </div>
         
-        <div className="mt-6 space-y-1">
+        {/* Coming Soon Section */}
+        <div className="space-y-1">
           <h2 className="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
             Coming Soon
           </h2>

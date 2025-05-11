@@ -1,11 +1,15 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import DashboardHeader from '@/components/dashboard/DashboardHeader';
 import DashboardSidebar from '@/components/dashboard/DashboardSidebar';
 import DashboardMobileNav from '@/components/dashboard/DashboardMobileNav';
 import WorkoutsContent from '@/components/dashboard/WorkoutsContent';
 
 const WorkoutsPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div className="min-h-screen bg-gray-50">
       <DashboardHeader />

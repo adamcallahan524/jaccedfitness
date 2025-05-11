@@ -2,6 +2,7 @@
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 interface WaitlistDialogProps {
   open: boolean;
@@ -27,12 +28,23 @@ const WaitlistDialog: React.FC<WaitlistDialogProps> = ({ open, onOpenChange }) =
             Join our waitlist to be the first to know when we launch!
           </p>
           
-          <Button 
-            className="w-full bg-gradient-to-r from-fitness-primary to-fitness-accent hover:opacity-90"
-            onClick={handleJoinWaitlist}
-          >
-            Join Waitlist
-          </Button>
+          <div className="flex flex-col gap-3">
+            <Button 
+              className="w-full bg-gradient-to-r from-fitness-primary to-fitness-accent hover:opacity-90"
+              onClick={handleJoinWaitlist}
+            >
+              Join Waitlist
+            </Button>
+            
+            <Link to="/dashboard/ai-trainer" onClick={() => onOpenChange(false)}>
+              <Button 
+                variant="outline"
+                className="w-full border-fitness-primary text-fitness-primary hover:bg-fitness-primary/10"
+              >
+                Meet Your AI Trainer
+              </Button>
+            </Link>
+          </div>
         </div>
       </DialogContent>
     </Dialog>

@@ -30,7 +30,7 @@ const Footer = () => {
               <div>
                 <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
                 <ul className="space-y-2">
-                  <li><Button variant="link" className="p-0 h-auto text-gray-600 hover:text-fitness-primary" onClick={() => window.open('/dashboard', '_blank')}>Demo</Button></li>
+                  <li><Button variant="link" className="p-0 h-auto text-gray-600 hover:text-fitness-primary" onClick={() => window.open('/dashboard/ai-trainer', '_blank')}>Demo</Button></li>
                   <li><Button variant="link" className="p-0 h-auto text-gray-600 hover:text-fitness-primary" onClick={() => window.open('/gym-manager', '_blank')}>Gym Manager Demo</Button></li>
                   <li><Button variant="link" className="p-0 h-auto text-gray-600 hover:text-fitness-primary" onClick={() => document.getElementById('waitlist-button')?.click()}>Join Waitlist</Button></li>
                   <li><Button variant="link" className="p-0 h-auto text-gray-600 hover:text-fitness-primary" onClick={() => setContactDialogOpen(true)}>Contact</Button></li>

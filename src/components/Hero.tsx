@@ -23,9 +23,9 @@ const Hero = () => {
               Replace expensive trainers with our AI platform. Increase member satisfaction, reduce costs, and grow your gym business with personalized workout plans and nutrition guidance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/dashboard" className="fitness-button text-center group">
+              <Link to="/dashboard/ai-trainer" className="fitness-button text-center group">
                 <span className="flex items-center justify-center">
-                  See It Live
+                  Meet Your Trainer
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
                 </span>
               </Link>
@@ -171,7 +171,7 @@ const Hero = () => {
                   <div className="w-full p-6 text-white">
                     <h3 className="font-bold text-xl mb-2">Gym Manager Dashboard</h3>
                     <p className="text-sm text-white/90 mb-3">Real-time analytics to maximize your gym's potential</p>
-                    <Link to="/dashboard" className="inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full hover:bg-white/30 transition-colors">
+                    <Link to="/gym-manager" className="inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full hover:bg-white/30 transition-colors">
                       See It Live <ArrowRight size={14} className="ml-1" />
                     </Link>
                   </div>
