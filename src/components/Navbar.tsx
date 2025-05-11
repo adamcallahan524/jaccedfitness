@@ -36,7 +36,7 @@ const Navbar = () => {
   <img 
     src="/jaccedlogo.png" 
     alt="Jacced Fitness Logo" 
-    className="h-10 w-auto" 
+    className="h-15 w-auto" 
   />
 </Link>
           
