@@ -2,7 +2,6 @@
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 interface WaitlistDialogProps {
   open: boolean;
@@ -16,6 +15,7 @@ const WaitlistDialog: React.FC<WaitlistDialogProps> = ({ open, onOpenChange }) =
   };
 
   const handleMeetTrainer = () => {
+    window.location.href = "/dashboard/ai-trainer";
     onOpenChange(false);
   };
 
@@ -40,14 +40,13 @@ const WaitlistDialog: React.FC<WaitlistDialogProps> = ({ open, onOpenChange }) =
               Join Waitlist
             </Button>
             
-            <Link to="/dashboard/ai-trainer" onClick={handleMeetTrainer}>
-              <Button 
-                variant="outline"
-                className="w-full border-fitness-primary text-fitness-primary hover:bg-fitness-primary/10"
-              >
-                Meet Your AI Trainer
-              </Button>
-            </Link>
+            <Button 
+              variant="outline"
+              className="w-full border-fitness-primary text-fitness-primary hover:bg-fitness-primary/10"
+              onClick={handleMeetTrainer}
+            >
+              Meet Your AI Trainer
+            </Button>
           </div>
         </div>
       </DialogContent>

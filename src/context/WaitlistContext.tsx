@@ -29,6 +29,7 @@ export const WaitlistProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   return (
     <WaitlistContext.Provider value={{ openWaitlist, isOpen, setIsOpen }}>
       {children}
+      {/* Render dialog directly without additional router context */}
       <WaitlistDialog open={isOpen} onOpenChange={setIsOpen} />
     </WaitlistContext.Provider>
   );

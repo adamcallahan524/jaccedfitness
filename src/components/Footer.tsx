@@ -9,11 +9,6 @@ const Footer = () => {
   const [contactDialogOpen, setContactDialogOpen] = useState(false);
   const { openWaitlist } = useWaitlist();
 
-  const handleOpenWaitlist = (e: React.MouseEvent) => {
-    e.preventDefault();
-    openWaitlist();
-  };
-
   return (
     <>
       <footer className="bg-gray-50 border-t">
@@ -38,7 +33,7 @@ const Footer = () => {
                 <ul className="space-y-2">
                   <li><Button variant="link" className="p-0 h-auto text-gray-600 hover:text-fitness-primary" onClick={() => window.open('/dashboard/ai-trainer', '_blank')}>Demo</Button></li>
                   <li><Button variant="link" className="p-0 h-auto text-gray-600 hover:text-fitness-primary" onClick={() => window.open('/gym-manager', '_blank')}>Gym Manager Demo</Button></li>
-                  <li><Button variant="link" className="p-0 h-auto text-gray-600 hover:text-fitness-primary" onClick={handleOpenWaitlist}>Join Waitlist</Button></li>
+                  <li><Button variant="link" className="p-0 h-auto text-gray-600 hover:text-fitness-primary" onClick={openWaitlist}>Join Waitlist</Button></li>
                   <li><Button variant="link" className="p-0 h-auto text-gray-600 hover:text-fitness-primary" onClick={() => setContactDialogOpen(true)}>Contact</Button></li>
                 </ul>
               </div>
