@@ -11,7 +11,7 @@ const Pricing = () => {
   const plans = [
     {
       name: "Individual",
-      price: "$9.99",
+      price: "$14.99",
       interval: "per month",
       description: "Perfect for personal fitness journeys",
       features: [
@@ -25,10 +25,10 @@ const Pricing = () => {
       cta: "Start Free Trial"
     },
     {
-      name: "Gym Essential",
-      price: "$199",
+      name: "Gym Starter",
+      price: "$299",
       interval: "per month",
-      description: "For small gyms with up to 100 members",
+      description: "Train up to 100 of your members",
       features: [
         "Up to 100 member licenses",
         "Branded member experience",
