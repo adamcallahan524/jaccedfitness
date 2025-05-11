@@ -10,7 +10,7 @@ interface WaitlistDialogProps {
 
 const WaitlistDialog: React.FC<WaitlistDialogProps> = ({ open, onOpenChange }) => {
   const handleJoinWaitlist = () => {
-    window.open("https://app.formbricks.com/s/cmaggh8cg4xl6x101fumkedlg", "_blank");
+    window.open("https://app.formbricks.com/s/cmaj3779t3ckzqy01qkcuxkzn", "_blank");
     onOpenChange(false);
   };
 
