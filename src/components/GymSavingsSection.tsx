@@ -34,7 +34,7 @@ const GymSavingsSection = () => {
                       <DollarSign size={20} />
                     </div>
                     <h3 className="font-bold text-lg mb-2">Reduce Staffing Costs</h3>
-                    <p className="text-gray-600">Save up to 62% on personal training staff costs through AI automation</p>
+                    <p className="text-gray-600">Save up to 75% on personal training staff costs through AI automation</p>
                   </div>
                   
                   <div className="flex-1 bg-fitness-primary/5 p-4 rounded-xl">
